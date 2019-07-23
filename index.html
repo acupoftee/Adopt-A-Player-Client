@@ -23,17 +23,16 @@
   <main>
     <div class="view homepage">
       <div class="intro">
-        <h4>Mentoring done right.</h4>
+        <h4>You're in good hands</h4>
         <h1>Welcome to Adopt a Player</h1>
         <p>A mote of dust suspended in a sunbeam prime number hearts of the stars not a sunrise but a galaxyrise tingling of the spine consciousness. Of brilliant syntheses the only home we've ever known with pretty stories for which there's little
           good evidence of brilliant syntheses brain is the seed of intelligence network of wormholes. Something incredible is waiting to be known citizens of distant epochs hundreds of thousands ship of the imagination star stuff harvesting star
           light rich in heavy atoms and billions upon billions upon billions upon billions upon billions upon billions upon billions.</p>
-        <button class="btn btn-primary">Sign Up</button>
-        <br>
-        <small>Already a user? <a href="#" class="logIn">Sign in</a>!</small>
+        <button class="btn btn-primary signUp">Sign Up</button>
+        <small class="intro-footer">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
       </div>
 
-      <div class="modal fade logIn" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -59,9 +58,46 @@
               </form>
                 <button type="button" class="btn btn-primary">Sign In</button>
             </div>
-            <!-- <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Sign In</button>
-            </div> -->
+            <div class="modal-footer">
+                <small class="modal-redirect">Don't have an account yet? <a href="#" class="signUp">Sign up</a>!</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-greeting">
+              <h5>Welcome!</h5>
+              <p>We promise you'll love it.</p>
+            </div>
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Email:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Password:</label>
+                  <input type="text" class="form-control" id="recipient-password">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Confirm Password:</label>
+                  <input type="text" class="form-control" id="recipient-password-confirm">
+                </div>
+              </form>
+                <button type="button" class="btn btn-primary">Sign Up</button>
+            </div>
+            <div class="modal-footer">
+                <small class="modal-redirect">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
+            </div>
           </div>
         </div>
       </div>
