@@ -1,6 +1,6 @@
 
 const openLogin = () => {
-  $('#signUp').modal('show')
+  $('#signInModal').modal('show')
 }
 
 module.exports = {

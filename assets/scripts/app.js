@@ -8,5 +8,5 @@
 const modalEvents = require('./events/modalEvents')
 $(() => {
   // your JS code goes here
-  $('#logIn').on('click', modalEvents.openLogin)
+  $('.logIn').on('click', modalEvents.openLogin)
 })
