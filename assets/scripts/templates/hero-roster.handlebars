@@ -1,0 +1,11 @@
+{{#each heros as |hero|}}
+  {{log hero}}
+  <section data-id="{{hero.id}}">
+    <h3>
+      {{hero.name}}
+    </h3>
+    <h6>
+      {{hero.hero_class}}
+    </h6>
+  </section>
+{{/each}}
