@@ -80,27 +80,18 @@
                 <h5>Welcome</h5>
                 <p>We promise you'll love it.</p>
               </div>
-              <form>
-
+              <form id="sign-up">
                 <div class="form-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-prepend">
-                    <span class="glyphicon glyphicon-envelope"></span>
-                      </div>
-                  <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
-                </div>
+                    <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
                 </div>
                 <div class="form-group">
-                  <div class="input-group-addon">
-                    <span class="glyphicon glyphicon-key"></span>
-                  </div>
                   <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
                 </div>
                 <div class="form-group">
                   <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control" required>
                 </div>
+                <button class="btn btn-primary">Sign Up</button>
               </form>
-              <button data-dismiss="modal" aria-hidden="true" value="submit" class="btn btn-primary" id="sign-up">Sign Up</button>
             </div>
             <div class="modal-footer">
               <small class="modal-redirect">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
