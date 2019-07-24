@@ -16,8 +16,9 @@
 <body>
   <div class="navbar-header">
     <nav>
-      <a href="#" class="logIn">Log In</a>
-      <a href="#" class="signUp">Sign Up</a>
+      <a href="#" class="logIn" id="login-tab">Sign In</a>
+      <a href="#" class="logOut" id="logout-tab"></a>
+      <a href="#" class="signUp" id="sign-up-tab">Sign Up</a>
     </nav>
   </div>
   <main>
@@ -28,7 +29,8 @@
         <p>A mote of dust suspended in a sunbeam prime number hearts of the stars not a sunrise but a galaxyrise tingling of the spine consciousness. Of brilliant syntheses the only home we've ever known with pretty stories for which there's little
           good evidence of brilliant syntheses brain is the seed of intelligence network of wormholes. Something incredible is waiting to be known citizens of distant epochs hundreds of thousands ship of the imagination star stuff harvesting star
           light rich in heavy atoms and billions upon billions upon billions upon billions upon billions upon billions upon billions.</p>
-        <button class="btn btn-primary signUp">Sign Up</button>
+        <button class="btn btn-primary homePageSignUp active">Sign Up</button>
+        <button class="btn btn-primary enterMentorSearch hidden">Get Adopted!</button>
         <small class="intro-footer">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
         <p class="login-message"></p>
       </div>
@@ -46,18 +48,17 @@
               <div class="modal-greeting">
                 <h5>Welcome Back</h5>
                 <p>We've missed you!</p>
+                <p class="sign-in-error hidden">Can't sign you in. 😞</p>
               </div>
-              <form>
+              <form id="sign-in">
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Email:</label>
-                  <input type="text" class="form-control" id="recipient-name">
+                    <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
                 </div>
                 <div class="form-group">
-                  <label for="message-text" class="col-form-label">Password:</label>
-                  <input type="text" class="form-control" id="recipient-password">
+                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
                 </div>
+                  <button class="btn btn-primary">Sign In</button>
               </form>
-              <button type="button" class="btn btn-primary" id="sign-in">Sign In</button>
             </div>
             <div class="modal-footer">
               <small class="modal-redirect">No account yet? <a href="#" class="signUp">Sign up</a>!</small>
@@ -79,6 +80,7 @@
               <div class="modal-greeting">
                 <h5>Welcome</h5>
                 <p>We promise you'll love it.</p>
+                <p class="sign-up-error hidden">Can't sign you up. 😞</p>
               </div>
               <form id="sign-up">
                 <div class="form-group">

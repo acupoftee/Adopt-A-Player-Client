@@ -13,8 +13,11 @@ $(() => {
 
   // MODAL EVENTS
   $('.logIn').on('click', modalEvents.openLogin)
+  $('.homePageSignUp').on('click', modalEvents.openSignUp)
   $('.signUp').on('click', modalEvents.openSignUp)
 
-  // AUTH event
+  // AUTH EVENTS
   $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('.logOut').on('click', authEvents.onSignOut)
 })

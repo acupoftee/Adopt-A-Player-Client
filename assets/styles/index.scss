@@ -8,6 +8,10 @@ nav {
   }
 }
 
+.active {
+  visibility: visible;
+}
+
 .intro-footer {
   display: block;
   padding-top: 1em;
@@ -16,6 +20,10 @@ nav {
 .modal-greeting {
   line-height: .5em;
   text-align: center;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .view {
