@@ -9,7 +9,15 @@ const openSignUp = () => {
   $('#signInModal').modal('hide')
 }
 
+const openEditProfile = () => {
+  $('#editProfileModal').modal({
+    backdrop: 'static',
+    keyboard: false,
+    show: true
+  })
+}
 module.exports = {
   openLogin,
-  openSignUp
+  openSignUp,
+  openEditProfile
 }
