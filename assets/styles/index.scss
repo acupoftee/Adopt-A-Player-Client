@@ -1,5 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
-nav {
+
+.active {
+  visibility: visible;
+}
+
+.auth-options {
   display: flex;
   justify-content: flex-end;
 
@@ -8,8 +13,30 @@ nav {
   }
 }
 
-.active {
-  visibility: visible;
+main {
+  @include make-container;
+  // @include make-container-max-widths;
+
+  section {
+    @include make-col-ready;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+    }
+    background: $white;
+    border: 1px solid;
+    cursor: pointer;
+    margin: -1px;
+    outline: none;
+    padding: 1rem;
+
+    p {
+      margin-bottom: 0;
+    }
+
+  }
 }
 
 .intro-footer {
@@ -24,6 +51,14 @@ nav {
 
 .hidden {
   visibility: hidden;
+}
+
+.hero-search {
+  justify-content: flex-start;
+
+  a {
+    margin:  2%;
+  }
 }
 
 .view {

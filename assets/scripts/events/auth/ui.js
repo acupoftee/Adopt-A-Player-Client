@@ -36,11 +36,15 @@ const signInSuccessful = responseData => {
   // $('#swap-link').text('Sign Out')
   // $('#swap-link').attr('class', 'logOut')
   // $('.logIn').html('')
+
   $('#login-tab').html('')
   $('#sign-up-tab').html('')
   $('#logout-tab').html('Sign Out')
+  $('#getHeroRoster').html('Find By Hero')
+
+  utils.hideItems('.homePageSignUp')
   utils.hideItems('.intro-footer')
-  $('.homePageSignUp').prop('value', 'Get Adopted')
+  // $('.homePageSignUp').prop('value', 'Get Adopted')
 
   // clear form
   $('form').trigger('reset')
@@ -56,9 +60,12 @@ const signOutSuccessful = () => {
   $('#login-tab').html('Sign In')
   $('#sign-up-tab').html('Sign Up')
   $('#logout-tab').html('')
+  $('#getHeroRoster').html('')
 
+  $('.hero-list').empty()
+
+  utils.showItems('.homePageSignUp')
   utils.showItems('.intro-footer')
-  $('.homePageLogin').css('visibility', 'visible')
 }
 
 const signOutFailure = () => {
