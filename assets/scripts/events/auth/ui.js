@@ -41,6 +41,7 @@ const signInSuccessful = responseData => {
   $('#sign-up-tab').html('')
   $('#logout-tab').html('Sign Out')
   $('#getHeroRoster').html('Find By Hero')
+  $('#getPlayers').html('Find Mentors')
 
   utils.hideItems('.homePageSignUp')
   utils.hideItems('.intro-footer')
@@ -61,6 +62,7 @@ const signOutSuccessful = () => {
   $('#sign-up-tab').html('Sign Up')
   $('#logout-tab').html('')
   $('#getHeroRoster').html('')
+  $('#getPlayers').html('')
 
   $('.hero-list').empty()
 

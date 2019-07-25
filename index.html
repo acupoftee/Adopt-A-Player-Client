@@ -17,9 +17,10 @@
   <div class="navbar-header">
     <nav>
       <div class="auth-options">
+        <a href="#" class="player-search" id="getPlayers"></a>
         <a href="#" class="hero-search" id="getHeroRoster"></a>
-        <a href="#" class="logIn" id="login-tab">Sign In</a>
         <a href="#" class="logOut" id="logout-tab"></a>
+        <a href="#" class="logIn" id="login-tab">Sign In</a>
         <a href="#" class="signUp" id="sign-up-tab">Sign Up</a>
       </div>
     </nav>
@@ -39,78 +40,78 @@
       </div>
     </div>
 
-      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-greeting">
+              <h5>Welcome Back</h5>
+              <p>We've missed you!</p>
+              <p class="sign-in-error hidden">Can't sign you in. 😞</p>
             </div>
-            <div class="modal-body">
-              <div class="modal-greeting">
-                <h5>Welcome Back</h5>
-                <p>We've missed you!</p>
-                <p class="sign-in-error hidden">Can't sign you in. 😞</p>
+            <form id="sign-in">
+              <div class="form-group">
+                <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
               </div>
-              <form id="sign-in">
-                <div class="form-group">
-                  <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
-                </div>
-                <button class="btn btn-primary">Sign In</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <small class="modal-redirect">No account yet? <a href="#" class="signUp">Sign up</a>!</small>
-            </div>
+              <div class="form-group">
+                <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
+              </div>
+              <button class="btn btn-primary">Sign In</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <small class="modal-redirect">No account yet? <a href="#" class="signUp">Sign up</a>!</small>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-greeting">
+              <h5>Welcome</h5>
+              <p>We promise you'll love it.</p>
+              <p class="sign-up-error hidden">Can't sign you up. 😞</p>
             </div>
-            <div class="modal-body">
-              <div class="modal-greeting">
-                <h5>Welcome</h5>
-                <p>We promise you'll love it.</p>
-                <p class="sign-up-error hidden">Can't sign you up. 😞</p>
+            <form id="sign-up">
+              <div class="form-group">
+                <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
               </div>
-              <form id="sign-up">
-                <div class="form-group">
-                  <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control" required>
-                </div>
-                <button class="btn btn-primary">Sign Up</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <small class="modal-redirect">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
-            </div>
+              <div class="form-group">
+                <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control" required>
+              </div>
+              <button class="btn btn-primary">Sign Up</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <small class="modal-redirect">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- END INTRO -->
+    <!-- END INTRO -->
 
-      <div class="view hero-listings">
-        <div id="content" class="hero-list"></div>
-      </div>
+    <div class="view hero-listings">
+      <div id="content" class="hero-list"></div>
+    </div>
   </main>
   <footer></footer>
 </body>
