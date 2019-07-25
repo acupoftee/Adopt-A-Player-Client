@@ -1,0 +1,22 @@
+{{#each users as |user|}}
+  {{log hero}}
+  <section data-id="{{user.id}}">
+    <img class="hero-icon" src="">
+    <h3>
+      {{user.display_name}}
+    </h3>
+    <h6>
+      Platform: {{user.platform}}
+    </h6>
+    <p>
+      {{user.summary}}
+    </p>
+    <!-- <h6>
+      Heroes: {{#each user.heros}}
+  <p>{{this}}</p>
+{{else}}
+  <p class="empty">N/A</p>
+{{/each}}
+    </h6> -->
+  </section>
+{{/each}}

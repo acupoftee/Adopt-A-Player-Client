@@ -8,14 +8,6 @@ const getHeroes = function () {
   })
 }
 
-// const deleteBook = function (bookId) {
-//   return $.ajax({
-//     url: config.apiUrl + '/books/' + bookId,
-//     method: 'DELETE'
-//   })
-// }
-
 module.exports = {
   getHeroes
-  // deleteBook
 }

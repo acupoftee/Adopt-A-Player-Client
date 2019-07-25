@@ -1,10 +1,10 @@
 const api = require('./api.js')
-// const ui = require('./ui.js')
+const ui = require('./ui.js')
 
 const onGetUsers = (event) => {
   event.preventDefault()
   api.getUsers()
-    .then(console.log)
+    .then(ui.getProfilesSuccess)
     .catch(console.error)
 }
 const addHandlers = () => {
