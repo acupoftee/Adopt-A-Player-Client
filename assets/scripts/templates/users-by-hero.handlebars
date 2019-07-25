@@ -1,0 +1,33 @@
+<!-- <div class="container"> -->
+  <!-- {{#if hero.users.length > 0}} -->
+    {{#groupEach 3 hero.users}}
+      <div class="row">
+        {{#each this}}
+          <section data-id="{{id}}" class="profile-card">
+            {{#if avatar_url}}
+              <img class="profile-pic" src={{avatar_url}}>
+            {{else}}
+              <img class="profile-pic" src="https://pbs.twimg.com/media/DEYvBMSVYAAiTnF.png">
+            {{/if}}
+            {{#if display_name}}
+              <h3>{{display_name}}</h3>
+            {{else}}
+              <h3>{{email}}</h3>
+            {{/if}}
+            </h3>
+            {{#if platform}}
+              <h6>
+                Platform: {{platform}}
+              </h6>
+            {{/if}}
+            <p>
+              {{summary}}
+            </p>
+          </section>
+        {{/each}}
+      </div>
+    {{/groupEach}}
+  <!-- {{else}}
+    <h1>No one has played this hero yet!</h1>
+  {{/if}} -->
+<!-- </div> -->

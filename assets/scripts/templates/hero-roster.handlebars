@@ -3,8 +3,8 @@
      <div class="row">
        {{#each this}}
        <section class="hero-card" data-id="{{id}}">
-         <img src={{grabImage id}}>
-         <h3>
+         <img class="hero-image" data-id="{{id}}" src={{grabImage id}}>
+         <h3 data-id="{{id}}">
            {{name}}
          </h3>
          <h6>
