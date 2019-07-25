@@ -85,6 +85,17 @@
   width: 150px;
 }
 
+.profile-pic-main {
+  @extend .profile-pic;
+  margin-bottom: 3%;
+  height: 350px;
+  width: 350px;
+}
+
+.profile-container {
+  text-align: center;
+}
+
 .view {
   margin: auto 5%;
 }
