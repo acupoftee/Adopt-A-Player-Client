@@ -20,7 +20,14 @@ const updateProfile = userData => {
   })
 }
 
+const getUserProfile = () => {
+  return $.ajax({
+    url: config.apiUrl + '/users/' + store.user.id
+  })
+}
+
 module.exports = {
   getUsers,
-  updateProfile
+  updateProfile,
+  getUserProfile
 }

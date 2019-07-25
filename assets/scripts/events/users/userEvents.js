@@ -18,10 +18,17 @@ const onEditProfile = event => {
     .catch(console.error)
 }
 
+const onClickProfileTab = () => {
+  api.getUserProfile()
+    .then(ui.getProfileSuccess)
+    .catch(console.error)
+}
+
 const addHandlers = () => {
   $('#getPlayers').on('click', onGetUsers)
 }
 module.exports = {
   addHandlers,
-  onEditProfile
+  onEditProfile,
+  onClickProfileTab
 }
