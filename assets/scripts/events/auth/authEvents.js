@@ -9,7 +9,7 @@ const onSignUp = event => {
   api.signUp(formData)
     .then(ui.signUpSuccessful)
     .catch(ui.signUpFailure)
-  onSignIn(event)
+  // onSignInAfterSignUp(formData)
 }
 
 const onSignIn = event => {
@@ -20,6 +20,23 @@ const onSignIn = event => {
     .then(ui.signInSuccessful)
     .catch(ui.signInFailure)
 }
+//
+// const onSignInAfterSignUp = formData => {
+//   // const form = event.target
+//   // const formData = getFormFields(form)
+//   api.signIn(formData)
+//     .then(ui.signInSuccessful)
+//     .catch(ui.signInFailure)
+// }
+
+// const onOnBoarding = event => {
+//   event.preventDefault()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   api.buildProfile(formData)
+//     .then(console.log)
+//     .catch(console.error)
+// }
 
 const onSignOut = event => {
   event.preventDefault()

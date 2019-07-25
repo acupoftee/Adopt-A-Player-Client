@@ -33,19 +33,17 @@ const signInSuccessful = responseData => {
   $('#signInModal').modal('hide')
 
   // Hide sign up text
-  // $('#swap-link').text('Sign Out')
-  // $('#swap-link').attr('class', 'logOut')
-  // $('.logIn').html('')
+  utils.hideItems('#login-tab')
+  utils.hideItems('#sign-up-tab')
 
-  $('#login-tab').html('')
-  $('#sign-up-tab').html('')
-  $('#logout-tab').html('Sign Out')
-  $('#getHeroRoster').html('Find By Hero')
-  $('#getPlayers').html('Find Mentors')
+  // show sign in text
+  utils.showItems('#logout-tab')
+  utils.showItems('#getHeroRoster')
+  utils.showItems('#getPlayers')
+  utils.showItems('#updateProfile')
 
   utils.hideItems('.homePageSignUp')
   utils.hideItems('.intro-footer')
-  // $('.homePageSignUp').prop('value', 'Get Adopted')
 
   // clear form
   $('form').trigger('reset')
@@ -57,12 +55,15 @@ const signInFailure = () => {
 }
 
 const signOutSuccessful = () => {
-  // Hide sign up text
-  $('#login-tab').html('Sign In')
-  $('#sign-up-tab').html('Sign Up')
-  $('#logout-tab').html('')
-  $('#getHeroRoster').html('')
-  $('#getPlayers').html('')
+  // show sign up text
+  utils.showItems('#login-tab')
+  utils.showItems('#sign-up-tab')
+
+  // Hide options for signed in users
+  utils.hideItems('#updateProfile')
+  utils.hideItems('#logout-tab')
+  utils.hideItems('#getHeroRoster')
+  utils.hideItems('#getPlayers')
 
   $('.hero-list').empty()
 
