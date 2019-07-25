@@ -8,6 +8,7 @@
 const authEvents = require('./events/auth/authEvents')
 const heroEvents = require('./events/heroes/heroEvents')
 const modalEvents = require('./events/modalEvents')
+const userEvents = require('./events/users/userEvents')
 
 $(() => {
   // your JS code goes here
@@ -21,5 +22,8 @@ $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('.logOut').on('click', authEvents.onSignOut)
+
+  // HANDLEBAR EVENTS
   heroEvents.addHandlers()
+  userEvents.addHandlers()
 })
