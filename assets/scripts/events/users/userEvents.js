@@ -24,8 +24,26 @@ const onClickProfileTab = () => {
     .catch(console.error)
 }
 
+const onOpenModals = event => {
+  const $target = $(event.target)
+  if ($target.hasClass('edit-display-name')) {
+    $('#newDisplayName').modal('show')
+  } else if ($target.hasClass('edit-summary')) {
+    $('#newSummary').modal('show')
+  } else if ($target.hasClass('edit-platform')) {
+    $('#newPlatform').modal('show')
+  } else if ($target.hasClass('edit-region')) {
+    $('#newRegion').modal('show')
+  } else if ($target.hasClass('edit-platform')) {
+    $('#newPlatform').modal('show')
+  } else if ($target.hasClass('edit-skill-rating')) {
+    $('#newSkillRating').modal('show')
+  }
+}
+
 const addHandlers = () => {
   $('#getPlayers').on('click', onGetUsers)
+  $('body').on('click', '.editable', onOpenModals)
 }
 module.exports = {
   addHandlers,
