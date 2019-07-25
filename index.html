@@ -21,13 +21,15 @@
         <a href="#" class="hero-search hidden" id="getHeroRoster">Find By Hero</a>
         <a href="#" class="logIn active" id="login-tab">Sign In</a>
         <a href="#" class="signUp active" id="sign-up-tab">Sign Up</a>
-        <a href="#" class="editProfile hidden" id="updateProfile">Profile</a>
+        <!-- <a href="#" class="editProfile hidden" id="updateProfile">Profile</a> -->
+        <a href="#" class="goToProfile hidden" id="profile">Profile</a>
+        <a href="#" class="goToSettings hidden" id="settings">Settings</a>
         <a href="#" class="logOut hidden" id="logout-tab">Sign Out</a>
       </div>
     </nav>
   </div>
   <main>
-    <div class="view homepage">
+    <div class="view homepage active">
       <div class="intro">
         <h4>You're in good hands</h4>
         <h1>Welcome to Adopt a Player</h1>
@@ -192,8 +194,14 @@
 
 
     <!-- END INTRO -->
+
+    <!-- LISTINGS -->
     <div class="view hero-listings">
       <div id="content" class="hero-list"></div>
+    </div>
+
+    <div class="view user-profile">
+      <div id="content" class="user-profile-content"></div>
     </div>
   </main>
   <footer></footer>
