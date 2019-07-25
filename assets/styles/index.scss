@@ -14,7 +14,7 @@
 }
 
 main {
-  @include make-container;
+  // @include make-container;
   // @include make-container-max-widths;
 
   section {
@@ -35,9 +35,9 @@ main {
     p {
       margin-bottom: 0;
     }
-
   }
 }
+
 
 .intro-footer {
   display: block;
@@ -59,6 +59,18 @@ main {
   a {
     margin:  2%;
   }
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.profile-pic {
+  // https://alligator.io/css/cropping-images-object-fit/
+  border-radius: 100%;
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
 }
 
 .view {

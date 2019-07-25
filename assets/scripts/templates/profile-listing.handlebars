@@ -1,22 +1,28 @@
-{{#each users as |user|}}
-  {{log hero}}
-  <section data-id="{{user.id}}">
-    <img class="hero-icon" src="">
-    <h3>
-      {{user.display_name}}
-    </h3>
-    <h6>
-      Platform: {{user.platform}}
-    </h6>
-    <p>
-      {{user.summary}}
-    </p>
-    <!-- <h6>
-      Heroes: {{#each user.heros}}
-  <p>{{this}}</p>
-{{else}}
-  <p class="empty">N/A</p>
-{{/each}}
-    </h6> -->
-  </section>
-{{/each}}
+<div class="container">
+  {{#groupEach 3 users}}
+    <div class="row">
+      {{#each this}}
+        {{#if display_name}}
+          <section data-id="{{id}}" class="profile-card">
+            {{#if avatar_url}}
+              <img class="profile-pic" src={{avatar_url}}>
+            {{else}}
+                <img class="profile-pic" src="https://pbs.twimg.com/media/DEYvBMSVYAAiTnF.png">
+            {{/if}}
+            <h3>
+              {{display_name}}
+            </h3>
+            {{#if platform}}
+              <h6>
+                Platform: {{platform}}
+              </h6>
+            {{/if}}
+            <p>
+              {{summary}}
+            </p>
+          </section>
+        {{/if}}
+      {{/each}}
+    </div>
+  {{/groupEach}}
+</div>

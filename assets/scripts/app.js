@@ -24,6 +24,9 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('.logOut').on('click', authEvents.onSignOut)
 
+  // PROFILE EVENTS
+  $('#new-profile').on('submit', userEvents.onEditProfile)
+
   // HANDLEBAR EVENTS
   heroEvents.addHandlers()
   userEvents.addHandlers()
