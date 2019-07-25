@@ -4,12 +4,12 @@ const ui = require('./ui')
 
 const onSignUp = event => {
   event.preventDefault()
-  console.log('clicked!!')
   const form = event.target
   const formData = getFormFields(form)
   api.signUp(formData)
     .then(ui.signUpSuccessful)
     .catch(ui.signUpFailure)
+  onSignIn(event)
 }
 
 const onSignIn = event => {
