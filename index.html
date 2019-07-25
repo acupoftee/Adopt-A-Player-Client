@@ -40,6 +40,7 @@
       </div>
     </div>
 
+    <!-- SIGN IN MODAL -->
     <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -72,7 +73,8 @@
       </div>
     </div>
 
-    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- SIGN UP MODAL -->
+    <div class="modal fade" id="signUpModalBlah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -97,7 +99,7 @@
               <div class="form-group">
                 <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control" required>
               </div>
-              <button class="btn btn-primary">Sign Up</button>
+              <button class="btn btn-primary sign-in-after-sign-up">Sign Up</button>
             </form>
           </div>
           <div class="modal-footer">
@@ -107,8 +109,90 @@
       </div>
     </div>
 
-    <!-- END INTRO -->
+    <!-- NEW PROFILE MODAL -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Getting Started</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="setup-greeting">
+              <h5>Welcome Noob</h5>
+              <p>You've come to the right place. Let's get you started by</br> adding your Overwatch info.</p>
+              <!-- <p class="sign-up-error hidden">Can't sign you up. 😞</p> -->
+            </div>
+            <form id="new-profile">
+              <div class="form-group">
+                <input name="users[display_name]" type="text" placeholder="Display Name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="users[summary]" type="textarea" placeholder="Tell us about yourself." class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="users[avatar_url]" type="text" placeholder="Avatar URL" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="users[region]" type="text" placeholder="Region" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="users[platform]" type="text" placeholder="Platform" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="users[skill_rating]" type="number" placeholder="Skill Rating" min="1" max="5000" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleSelect2">Main Heroes</label>
+                <select multiple class="form-control" id="exampleSelect2">
+                  <option>Ana</option>
+                  <option>Ashe</option>
+                  <option>Baptiste</option>
+                  <option>Bastion</option>
+                  <option>Brigitte</option>
+                  <option>D.Va</option>
+                  <option>Doomfist</option>
+                  <option>Genji</option>
+                  <option>Hanzo</option>
+                  <option>Junkrat</option>
+                  <option>Lúcio</option>
+                  <option>McCree</option>
+                  <option>Mei</option>
+                  <option>Mercy</option>
+                  <option>Moira</option>
+                  <option>Orisa</option>
+                  <option>Pharah</option>
+                  <option>Reaper</option>
+                  <option>Reinhardt</option>
+                  <option>Roadhog</option>
+                  <option>Sigma</option>
+                  <option>Soldier: 76</option>
+                  <option>Sombra</option>
+                  <option>Symmetra</option>
+                  <option>Torbjörn</option>
+                  <option>Tracer</option>
+                  <option>Widowmaker</option>
+                  <option>Winston</option>
+                  <option>Wrecking Ball</option>
+                  <option>Zarya</option>
+                  <option>Zenyatta</option>
+                </select>
+              </div>
 
+              <button class="btn btn-primary sign-in-after-sign-up">Sign Up</button>
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <small class="modal-redirect">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- END INTRO -->
     <div class="view hero-listings">
       <div id="content" class="hero-list"></div>
     </div>
