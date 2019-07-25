@@ -1,3 +1,4 @@
+// https://funkjedi.com/technology/412-every-nth-item-in-handlebars/
 const groupEach = function (every, context, options) {
   let out = ''
   let subcontext = []

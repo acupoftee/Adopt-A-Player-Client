@@ -1,35 +1,5 @@
-<!-- <div class="container">
-  {{#groupEach 3 users}}
-    <div class="row">
-      {{#each this}}
-        {{#if display_name}}
-          <section data-id="{{id}}" class="profile-card">
-            {{#if avatar_url}}
-              <img class="profile-pic" src={{avatar_url}}>
-            {{else}}
-                <img class="profile-pic" src="https://pbs.twimg.com/media/DEYvBMSVYAAiTnF.png">
-            {{/if}}
-            <h3>
-              {{display_name}}
-            </h3>
-            {{#if platform}}
-              <h6>
-                Platform: {{platform}}
-              </h6>
-            {{/if}}
-            <p>
-              {{summary}}
-            </p>
-          </section>
-        {{/if}}
-      {{/each}}
-    </div>
-  {{/groupEach}}
-</div>
- -->
-
- <div class="container">
-   {{#groupEach 3 heros}}
+<div class="container">
+   {{#groupEach 5 heros}}
      <div class="row">
        {{#each this}}
        <section class="hero-card" data-id="{{id}}">
@@ -45,17 +15,3 @@
      </div>
    {{/groupEach}}
  </div>
-
-
-<!-- {{#each heros as |hero|}}
-  {{log hero}}
-  <section class="col-4" data-id="{{hero.id}}">
-    <img src={{grabImage hero.id}}>
-    <h3>
-      {{hero.name}}
-    </h3>
-    <h6>
-      {{hero.hero_class}}
-    </h6>
-  </section>
-{{/each}} -->
