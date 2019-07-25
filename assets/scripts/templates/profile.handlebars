@@ -2,53 +2,53 @@
   <img class="profile-pic-main" src={{user.avatar_url}}>
 
   {{#if user.display_name}}
-    <h1>{{user.display_name}}</h1>
+    <h1 class="edit-display-name">{{user.display_name}}</h1>
     <!-- <p class="in-profile-edit">Edit</p> -->
   {{else}}
     <h1>{{user.email}}</h1>
-    <p class="in-profile-edit">Add Display Name</p>
+    <p class="in-profile-edit edit-display-name">Add Display Name</p>
   {{/if}}
   {{> modal_displayname}}
 
 
   {{#if user.summary}}
-    <p>{{user.summary}}</p>
+    <p class="edit-summary">{{user.summary}}</p>
     <!-- <p class="in-profile-edit">Edit</p> -->
   {{else}}
-    <p class="in-profile-edit">Add Summary</p>
+    <p class="in-profile-edit edit-summary">Add Summary</p>
   {{/if}}
   {{> modal_summary}}
 
   {{#if user.is_mentor}}
-    <p>Mentor</p>
+    <p class="edit-mentor">Mentor</p>
   {{else}}
-    <p>Up for Adoption</p>
+    <p class="edit-mentor">Up for Adoption</p>
   {{/if}}
   <!-- <p class="in-profile-edit">Edit</p> -->
   <!-- {{> modal_summary}} -->
 
   {{#if user.platform}}
-    <p>Platform: {{user.platform}}</p>
+    <p class="edit-platform">Platform: {{user.platform}}</p>
     <!-- <p class="in-profile-edit">Edit</p> -->
   {{else}}
-    <p class="in-profile-edit">Add Platform</p>
+    <p class="in-profile-edit edit-platform">Add Platform</p>
   {{/if}}
   {{> modal_platform}}
 
   {{#if user.region}}
-    <p>Region: {{user.region}}</p>
+    <p class="edit-region">Region: {{user.region}}</p>
     <!-- <p class="in-profile-edit">Edit</p> -->
   {{else}}
-    <p class="in-profile-edit">Add Region</p>
+    <p class="in-profile-edit edit-region">Add Region</p>
   {{/if}}
   {{> modal_region}}
 
 
   {{#if user.skill_rating}}
-    <p>Skill Rating: {{user.skill_rating}}</p>
+    <p class="edit-skill-rating">Skill Rating: {{user.skill_rating}}</p>
     <!-- <p class="in-profile-edit">Edit</p> -->
   {{else}}
-    <p class="in-profile-edit">Add Skill Rating</p>
+    <p class="in-profile-edit edit-skill-rating">Add Skill Rating</p>
   {{/if}}
   {{> modal_skill_rating}}
 </div>
