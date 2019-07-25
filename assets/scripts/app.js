@@ -25,7 +25,8 @@ $(() => {
   $('.logOut').on('click', authEvents.onSignOut)
 
   // PROFILE EVENTS
-  $('#new-profile').on('submit', userEvents.onEditProfile)
+  // $('#new-profile').on('submit', userEvents.onEditProfile)
+  $('.goToProfile').on('click', userEvents.onClickProfileTab)
 
   // HANDLEBAR EVENTS
   heroEvents.addHandlers()

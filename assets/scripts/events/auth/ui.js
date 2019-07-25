@@ -23,7 +23,7 @@ const signUpFailure = () => {
 
 const signInSuccessful = responseData => {
   // hide error message if active on success
-  if ($('.sign-up-error').hasClass('active')) {
+  if ($('.sign-in-error').hasClass('active')) {
     utils.hideItems('.sign-in-error')
   }
   // update the user's session info for later
@@ -40,7 +40,8 @@ const signInSuccessful = responseData => {
   utils.showItems('#logout-tab')
   utils.showItems('#getHeroRoster')
   utils.showItems('#getPlayers')
-  utils.showItems('#updateProfile')
+  utils.showItems('#profile')
+  utils.showItems('#settings')
 
   utils.hideItems('.homePageSignUp')
   utils.hideItems('.intro-footer')
@@ -60,7 +61,8 @@ const signOutSuccessful = () => {
   utils.showItems('#sign-up-tab')
 
   // Hide options for signed in users
-  utils.hideItems('#updateProfile')
+  utils.hideItems('#profile')
+  utils.hideItems('#settings')
   utils.hideItems('#logout-tab')
   utils.hideItems('#getHeroRoster')
   utils.hideItems('#getPlayers')
