@@ -1,0 +1,54 @@
+<div class="profile-container container">
+  <img class="profile-pic-main" src={{user.avatar_url}}>
+
+  {{#if user.display_name}}
+    <h1>{{user.display_name}}</h1>
+    <!-- <p class="in-profile-edit">Edit</p> -->
+  {{else}}
+    <h1>{{user.email}}</h1>
+    <p class="in-profile-edit">Add Display Name</p>
+  {{/if}}
+  {{> modal_displayname}}
+
+
+  {{#if user.summary}}
+    <p>{{user.summary}}</p>
+    <!-- <p class="in-profile-edit">Edit</p> -->
+  {{else}}
+    <p class="in-profile-edit">Add Summary</p>
+  {{/if}}
+  {{> modal_summary}}
+
+  {{#if user.is_mentor}}
+    <p>Mentor</p>
+  {{else}}
+    <p>Up for Adoption</p>
+  {{/if}}
+  <!-- <p class="in-profile-edit">Edit</p> -->
+  <!-- {{> modal_summary}} -->
+
+  {{#if user.platform}}
+    <p>Platform: {{user.platform}}</p>
+    <!-- <p class="in-profile-edit">Edit</p> -->
+  {{else}}
+    <p class="in-profile-edit">Add Platform</p>
+  {{/if}}
+  {{> modal_platform}}
+
+  {{#if user.region}}
+    <p>Region: {{user.region}}</p>
+    <!-- <p class="in-profile-edit">Edit</p> -->
+  {{else}}
+    <p class="in-profile-edit">Add Region</p>
+  {{/if}}
+  {{> modal_region}}
+
+
+  {{#if user.skill_rating}}
+    <p>Skill Rating: {{user.skill_rating}}</p>
+    <!-- <p class="in-profile-edit">Edit</p> -->
+  {{else}}
+    <p class="in-profile-edit">Add Skill Rating</p>
+  {{/if}}
+  {{> modal_skill_rating}}
+</div>
