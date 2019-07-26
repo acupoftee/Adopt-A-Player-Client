@@ -27,6 +27,7 @@ $(() => {
   // PROFILE EVENTS
   // $('#new-profile').on('submit', userEvents.onEditProfile)
   $('.goToProfile').on('click', userEvents.onClickProfileTab)
+  // $('#')
 
   // HANDLEBAR EVENTS
   heroEvents.addHandlers()
