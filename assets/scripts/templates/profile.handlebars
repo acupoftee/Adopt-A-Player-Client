@@ -28,7 +28,7 @@
   <!-- {{> modal_summary}} -->
 
   {{#if user.platform}}
-    <p class="editable edit-platform">Platform: {{user.platform}}</p>
+    <p class="editable">Platform: <span class="edit-platform">{{user.platform}}</span></p>
     <!-- <p class="in-profile-edit">Edit</p> -->
   {{else}}
     <p class="in-profile-edit edit-platform">Add Platform</p>
@@ -36,7 +36,7 @@
   {{> modal_platform}}
 
   {{#if user.region}}
-    <p class="editable edit-region">Region: {{user.region}}</p>
+    <p class="editable">Region: <span class="edit-region">{{user.region}}</span></p>
     <!-- <p class="in-profile-edit">Edit</p> -->
   {{else}}
     <p class="in-profile-edit edit-region">Add Region</p>
@@ -45,7 +45,7 @@
 
 
   {{#if user.skill_rating}}
-    <p class="editable edit-skill-rating">Skill Rating: {{user.skill_rating}}</p>
+    <p class="editable">Skill Rating: <span class="edit-skill-rating">{{user.skill_rating}}</span></p>
     <!-- <p class="in-profile-edit">Edit</p> -->
   {{else}}
     <p class="in-profile-edit edit-skill-rating">Add Skill Rating</p>

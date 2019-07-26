@@ -31,6 +31,8 @@ const onUpdateProfile = event => {
   api.updateProfile(formData)
     .then(console.log)
     .catch(console.error)
+  $('.modal').modal('hide')
+  ui.updateProfileView(formData)
 }
 
 const onOpenModals = event => {

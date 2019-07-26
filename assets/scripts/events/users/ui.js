@@ -16,7 +16,31 @@ const getProfileSuccess = data => {
   $('.hero-list').html(showProfileHtml)
 }
 
+const updateProfileView = formData => {
+  const key = Object.keys(formData.user)[0]
+  const updatedForm = formData.user
+  console.log('key', key)
+  switch (key) {
+    case 'display_name':
+      $('.edit-display-name').html(updatedForm[key])
+      break
+    case 'summary':
+      $('.edit-summary').html(updatedForm[key])
+      break
+    case 'platform':
+      $('.edit-platform').html(updatedForm[key])
+      break
+    case 'region':
+      $('.edit-region').html(updatedForm[key])
+      break
+    case 'skill_rating':
+      $('.edit-skill-rating').html(updatedForm[key])
+      break
+  }
+}
+
 module.exports = {
   getProfilesSuccess,
-  getProfileSuccess
+  getProfileSuccess,
+  updateProfileView
 }
