@@ -1,5 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'menu.scss';
+@import 'home.scss';
+
+$button: #FF9933;
 
 .active {
   visibility: visible;
@@ -12,6 +15,20 @@
   a {
     margin:  2%;
   }
+}
+
+a {
+  color: $button;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn,
+.btn-primary:not(:disabled):not(.disabled).active {
+  background-color: $button;
+  border-color: $button;
 }
 
 .profile-card {

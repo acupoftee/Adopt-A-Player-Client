@@ -1,13 +1,15 @@
+$button: #FF9933;
+
 nav {
-  background-color: black;
+  // background-color: black;
   margin-bottom: 1.5em;
 
   a {
-    color: darken(white, 30%);
+    color: #fff;
     // letter-spacing: 4px;
 
     &:hover {
-      color: orange;
+      color: $button;
       text-decoration: none;
       transition: .5s ease;
     }
