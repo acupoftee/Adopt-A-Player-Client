@@ -1,5 +1,6 @@
-$background: #333366;
+// $background: #333366;
 // $button: #FF9933;
+$background: #1b1d29;
 $paragraph-color: #fff;
 
 html,
@@ -9,7 +10,10 @@ body {
 }
 
 body {
-  background: linear-gradient(#000, $background);
+  // background: linear-gradient(#000, $background);
+  background: linear-gradient(rgba($background, .9), $background), url("https://www.gamecrate.com/sites/default/files/Overwatch-Storm-Rising-Guide-15.jpg");
+
+  background-size: cover;
 }
 
 .homepage {

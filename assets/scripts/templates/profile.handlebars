@@ -50,5 +50,12 @@
   {{else}}
     <p class="in-profile-edit edit-skill-rating">Add Skill Rating</p>
   {{/if}}
+
+  {{#if user.heros}}
+    <p>Heroes:</p>
+    {{#each user.heros as |heroes|}}
+      <span>{{heroes.name}}&nbsp;</span>
+    {{/each}}
+  {{/if}}
   {{> modal_skill_rating}}
 </div>
