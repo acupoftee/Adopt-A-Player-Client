@@ -53,9 +53,13 @@
 
   {{#if user.heros}}
     <p>Heroes:</p>
+    <div class="hero-icon-container">
     {{#each user.heros as |heroes|}}
-      <span>{{heroes.name}}&nbsp;</span>
+    <img class="hero-profile-icon" data-id="{{id}}" src={{grabImage id}}>
     {{/each}}
+  </div>
+  {{else}}
+    <p class="in-profile-edit edit-heroes">Add Heroes</p>
   {{/if}}
   {{> modal_skill_rating}}
 </div>

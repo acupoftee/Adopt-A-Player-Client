@@ -118,3 +118,26 @@ a {
 .view {
   margin: auto 5%;
 }
+
+.hero-icon-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-profile-icon {
+  border-radius: 100%;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  margin: auto 1%;
+
+  &:hover .played-hero-icon{
+    visibility: visible;
+  }
+}
+
+.played-hero-icon {
+  visibility: hidden;
+}
