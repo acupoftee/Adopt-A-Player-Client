@@ -16,6 +16,7 @@ const openEditProfile = () => {
     show: true
   })
 }
+
 module.exports = {
   openLogin,
   openSignUp,

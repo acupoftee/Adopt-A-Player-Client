@@ -60,9 +60,15 @@ const onOpenModals = event => {
   }
 }
 
+const onOpenRemoveHeroPrompt = event => {
+  // console.log('Clicked!')
+  $('#deleteHeroPrompt').modal('show')
+}
+
 const addHandlers = () => {
   $('#getPlayers').on('click', onGetUsers)
   $('body').on('click', '.editable', onOpenModals)
+  $('body').on('click', '.hero-profile-icon', onOpenRemoveHeroPrompt)
 }
 
 module.exports = {

@@ -8,6 +8,7 @@
 const authEvents = require('./events/auth/authEvents')
 const heroEvents = require('./events/heroes/heroEvents')
 const modalEvents = require('./events/modalEvents')
+// const profileEvents = require('./events/profile/events')
 const userEvents = require('./events/users/userEvents')
 
 $(() => {
@@ -27,7 +28,22 @@ $(() => {
   // PROFILE EVENTS
   // $('#new-profile').on('submit', userEvents.onEditProfile)
   $('.goToProfile').on('click', userEvents.onClickProfileTab)
-  // $('#')
+
+  // https://stackoverflow.com/questions/9827095/is-it-possible-to-use-jquery-on-and-hover
+  //
+  //   $(".selector").on({
+  //     mouseenter: function () {
+  //         //stuff to do on mouse enter
+  //     },
+  //     mouseleave: function () {
+  //         //stuff to do on mouse leave
+  //     }
+  // })
+
+  // $('.hero-profile-icon').on({
+  //   mouseenter: profileEvents.showHeroDeleteTooltip,
+  //   mouseleave: profileEvents.hideHeroDeleteTooltip
+  // })
 
   // HANDLEBAR EVENTS
   heroEvents.addHandlers()

@@ -125,16 +125,27 @@ a {
   justify-content: center;
 }
 
+.played-hero-tooltip {
+  background: black;
+  border-radius: 100%;
+  color: white;
+  display: block;
+  position: absolute;
+  font-size: 20px;
+}
+
 .hero-profile-icon {
+  border: white 4px solid;
   border-radius: 100%;
   object-fit: cover;
-  height: 50px;
-  width: 50px;
+  height: 54px;
+  width: 54px;
   padding: 0;
   margin: auto 1%;
 
-  &:hover .played-hero-icon{
-    visibility: visible;
+  &:hover {
+    cursor: pointer;
+    border: red 4px solid;
   }
 }
 

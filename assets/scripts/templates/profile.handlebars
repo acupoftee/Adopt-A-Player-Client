@@ -55,8 +55,12 @@
     <p>Heroes:</p>
     <div class="hero-icon-container">
     {{#each user.heros as |heroes|}}
+    <div class="hover-prompt">
+    <div class="played-hero-tooltip">X</div>
     <img class="hero-profile-icon" data-id="{{id}}" src={{grabImage id}}>
+  </div>
     {{/each}}
+    {{> modal_delete_hero }}
   </div>
   {{else}}
     <p class="in-profile-edit edit-heroes">Add Heroes</p>
