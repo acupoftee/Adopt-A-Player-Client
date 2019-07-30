@@ -26,6 +26,16 @@ const getUserProfile = () => {
   })
 }
 
+// const deleteHero = (userId, heroId) => {
+//   return $.ajax({
+//     url: config.apiUrl + '/userHero/' + store.user.id,
+//     data: userData,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 module.exports = {
   getUsers,
   updateProfile,

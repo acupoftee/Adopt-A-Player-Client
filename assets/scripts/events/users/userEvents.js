@@ -63,6 +63,10 @@ const onOpenModals = event => {
 const onOpenRemoveHeroPrompt = event => {
   // console.log('Clicked!')
   $('#deleteHeroPrompt').modal('show')
+  $('#delete-hero').on('submit', () => {
+    console.log('Byeeeeeeeeeee')
+    $('#deleteHeroPrompt').modal('hide')
+  })
 }
 
 const addHandlers = () => {

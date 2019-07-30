@@ -126,12 +126,13 @@ a {
 }
 
 .played-hero-tooltip {
-  background: black;
-  border-radius: 100%;
-  color: white;
+  color: gray;
   display: block;
-  position: absolute;
-  font-size: 20px;
+  height: 12px;
+  width: 12px;
+  position: relative;
+  font-size: .5em;
+  font-weight: 400;
 }
 
 .hero-profile-icon {

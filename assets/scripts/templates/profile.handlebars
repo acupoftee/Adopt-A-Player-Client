@@ -57,13 +57,20 @@
     {{#each user.heros as |heroes|}}
     <div class="hover-prompt">
     <div class="played-hero-tooltip">X</div>
-    <img class="hero-profile-icon" data-id="{{id}}" src={{grabImage id}}>
+    <img class="hero-profile-icon" data-id="{{heroes.id}}" src={{grabImage id}}>
   </div>
     {{/each}}
-    {{> modal_delete_hero }}
   </div>
   {{else}}
     <p class="in-profile-edit edit-heroes">Add Heroes</p>
   {{/if}}
-  {{> modal_skill_rating}}
+
+  {{#if user.videos}}
+    </br>
+    <h2>Videos:</h2>
+    {{#each user.videos as |video|}}
+    <iframe width="420" height="345" data-id="{{video.id}}" src="https://www.youtube.com/embed/0IVq8o8V67w"></iframe>
+    {{/each}}
+  {{/if}}
 </div>
+{{> modal_delete_hero}}
