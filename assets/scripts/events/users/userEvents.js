@@ -57,6 +57,8 @@ const onOpenModals = event => {
     $('#newSkillRating').modal('show')
     $('#skill-rating').on('submit', onUpdateProfile)
     $('#newSkillRating').modal('hide')
+  } else if ($target.hasClass('edit-video')) {
+    $('#videoOptions').modal('show')
   }
 }
 

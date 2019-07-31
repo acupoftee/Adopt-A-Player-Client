@@ -69,8 +69,12 @@
     </br>
     <h2>Videos:</h2>
     {{#each user.videos as |video|}}
+    </br>
+    <h5 class="editable edit-video">{{video.title}}</h5>
     <iframe width="420" height="345" data-id="{{video.id}}" src={{grabVideoUrl video.url}}></iframe>
+    </br>
     {{/each}}
   {{/if}}
 </div>
 {{> modal_delete_hero}}
+{{> modal_video}}
