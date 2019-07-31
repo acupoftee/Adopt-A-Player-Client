@@ -59,7 +59,13 @@ const onOpenModals = event => {
     $('#newSkillRating').modal('hide')
   } else if ($target.hasClass('edit-video')) {
     $('#videoOptions').modal('show')
+    $('#video-edit-option').on('click', openVideoOptions)
   }
+}
+
+const openVideoOptions = event => {
+  $('#editVideoModal').modal('show')
+  $('#videoOptions').modal('hide')
 }
 
 const onOpenRemoveHeroPrompt = event => {
