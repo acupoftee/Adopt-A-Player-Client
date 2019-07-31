@@ -127,12 +127,14 @@ a {
 
 .played-hero-tooltip {
   color: gray;
-  display: block;
+  // display: block;
+  display: none;
   height: 12px;
   width: 12px;
   position: relative;
   font-size: .5em;
   font-weight: 400;
+  // visibility: hidden;
 }
 
 .hero-profile-icon {
@@ -147,6 +149,11 @@ a {
   &:hover {
     cursor: pointer;
     border: red 4px solid;
+
+    // .played-hero-tooltip {
+    //   position: relative;
+    //   visibility: visible;
+    // }
   }
 }
 

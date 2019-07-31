@@ -62,6 +62,8 @@ const onOpenModals = event => {
 
 const onOpenRemoveHeroPrompt = event => {
   // console.log('Clicked!')
+  // pass the API the id of the join table entry
+  // in rails, pass in the two foreign keys
   $('#deleteHeroPrompt').modal('show')
   $('#delete-hero').on('submit', () => {
     console.log('Byeeeeeeeeeee')
