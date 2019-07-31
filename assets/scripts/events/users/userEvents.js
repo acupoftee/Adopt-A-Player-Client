@@ -60,11 +60,17 @@ const onOpenModals = event => {
   } else if ($target.hasClass('edit-video')) {
     $('#videoOptions').modal('show')
     $('#video-edit-option').on('click', openVideoOptions)
+    $('#video-delete-option').on('click', openVideoDeleteOptions)
   }
 }
 
 const openVideoOptions = event => {
   $('#editVideoModal').modal('show')
+  $('#videoOptions').modal('hide')
+}
+
+const openVideoDeleteOptions = event => {
+  $('#deleteVideoPrompt').modal('show')
   $('#videoOptions').modal('hide')
 }
 
