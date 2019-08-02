@@ -26,6 +26,15 @@ const getUserProfile = () => {
   })
 }
 
+const deleteVideo = id => {
+  return $.ajax({
+    url: config.apiUrl + '/videos/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 // const deleteHero = (userId, heroId) => {
 //   return $.ajax({
 //     url: config.apiUrl + '/userHero/' + store.user.id,
@@ -39,5 +48,6 @@ const getUserProfile = () => {
 module.exports = {
   getUsers,
   updateProfile,
-  getUserProfile
+  getUserProfile,
+  deleteVideo
 }

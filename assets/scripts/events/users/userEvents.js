@@ -35,6 +35,16 @@ const onUpdateProfile = event => {
   ui.updateProfileView(formData)
 }
 
+const onDeleteVideo = event => {
+  event.preventDefault()
+  const videoId = $('iframe').data('id')
+  // console.log(videoId)
+  api.deleteVideo(videoId)
+    .then(console.log)
+    .then(() => $('#deleteVideoPrompt').modal('hide'))
+    .catch(console.error)
+}
+
 const onOpenModals = event => {
   const $target = $(event.target)
   if ($target.hasClass('edit-display-name')) {
@@ -72,6 +82,7 @@ const openVideoOptions = event => {
 const openVideoDeleteOptions = event => {
   $('#deleteVideoPrompt').modal('show')
   $('#videoOptions').modal('hide')
+  $('#delete-video').on('click', onDeleteVideo)
 }
 
 const onOpenRemoveHeroPrompt = event => {
@@ -79,7 +90,7 @@ const onOpenRemoveHeroPrompt = event => {
   // pass the API the id of the join table entry
   // in rails, pass in the two foreign keys
   $('#deleteHeroPrompt').modal('show')
-  $('#delete-hero').on('submit', () => {
+  $('#delete-hero').on('click', () => {
     console.log('Byeeeeeeeeeee')
     $('#deleteHeroPrompt').modal('hide')
   })
