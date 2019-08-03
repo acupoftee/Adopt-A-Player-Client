@@ -3,3 +3,71 @@
   margin: 10% auto;
   padding: 10%;
 }
+
+.add-video {
+  &:hover {
+    color: blue;
+    cursor: pointer;
+  }
+}
+
+.hero-icon-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.played-hero-tooltip {
+  color: gray;
+  // display: block;
+  display: none;
+  height: 12px;
+  width: 12px;
+  position: relative;
+  font-size: .5em;
+  font-weight: 400;
+  // visibility: hidden;
+}
+
+.hero-profile-icon {
+  border: white 4px solid;
+  border-radius: 100%;
+  object-fit: cover;
+  height: 54px;
+  width: 54px;
+  padding: 0;
+  margin: auto 1%;
+
+  &:hover {
+    cursor: pointer;
+    border: red 4px solid;
+
+    // .played-hero-tooltip {
+    //   position: relative;
+    //   visibility: visible;
+    // }
+  }
+}
+
+.played-hero-icon {
+  visibility: hidden;
+}
+
+.profile-pic {
+  // https://alligator.io/css/cropping-images-object-fit/
+  border-radius: 100%;
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
+}
+
+.profile-pic-main {
+  @extend .profile-pic;
+  margin-bottom: 3%;
+  height: 350px;
+  width: 350px;
+}
+
+.profile-container {
+  text-align: center;
+}

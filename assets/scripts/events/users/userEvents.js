@@ -40,9 +40,10 @@ const onDeleteVideo = event => {
   const videoId = $('iframe').data('id')
   // console.log(videoId)
   api.deleteVideo(videoId)
-    .then(console.log)
-    .then(() => $('#deleteVideoPrompt').modal('hide'))
+    .then(onClickProfileTab)
     .catch(console.error)
+  onClickProfileTab()
+  $('#deleteVideoPrompt').modal('hide')
 }
 
 const onOpenModals = event => {
