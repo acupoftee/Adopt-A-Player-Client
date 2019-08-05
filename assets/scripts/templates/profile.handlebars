@@ -56,7 +56,7 @@
     <div class="hero-icon-container">
     {{#each user.heros as |heroes|}}
     <div class="hover-prompt">
-    <div class="played-hero-tooltip">X</div>
+    <!-- <div class="played-hero-tooltip">X</div> -->
     <img class="hero-profile-icon" data-id="{{heroes.id}}" src={{grabImage id}}>
   </div>
     {{/each}}
@@ -68,16 +68,19 @@
   {{#if user.videos}}
     </br>
     <h2>Videos:</h2>
-    <p class="add-video">Add New Video</p>
+    <p class="editable add-video-option">Add New Video</p>
     {{#each user.videos as |video|}}
     </br>
     <h5 class="editable edit-video">{{video.title}}</h5>
     <iframe width="420" height="345" data-id="{{video.id}}" src={{grabVideoUrl video.url}}></iframe>
     </br>
     {{/each}}
+  {{else}}
+      <p class="editable add-video-option">Add New Video</p>
   {{/if}}
 </div>
 {{> modal_delete_hero}}
 {{> video/modal_video}}
 {{> video/modal_edit_video}}
 {{> video/modal_delete_video}}
+{{> video/modal_add_video}}

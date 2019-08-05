@@ -1,0 +1,27 @@
+<div class="modal fade" id="addVideoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Video</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-greeting">
+          <h5>Add a new video.</h5>
+          <p class="add-video-error hidden">Make sure to fill out all fields!</p>
+        </div>
+        <form id="sign-in">
+          <div class="form-group">
+            <input name="video[title]" placeholder="Title" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <input name="video[url]" placeholder="Youtube URL" class="form-control" required>
+          </div>
+          <button class="btn btn-primary">Add Video</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
