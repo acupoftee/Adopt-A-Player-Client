@@ -1,6 +1,7 @@
 const getFormFields = require('../../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../../store')
 
 const onGetUsers = event => {
   event.preventDefault()
@@ -33,6 +34,19 @@ const onUpdateProfile = event => {
     .catch(console.error)
   $('.modal').modal('hide')
   ui.updateProfileView(formData)
+}
+
+const onAddVideo = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  formData.video.user_id = store.user.id
+  console.log(formData)
+  // api.updateProfile(formData)
+  //   .then(console.log)
+  //   .catch(console.error)
+  // $('.modal').modal('hide')
+  // ui.updateProfileView(formData)
 }
 
 const onDeleteVideo = event => {
@@ -74,6 +88,7 @@ const onOpenModals = event => {
     $('#video-delete-option').on('click', openVideoDeleteOptions)
   } else if ($target.hasClass('add-video-option')) {
     $('#addVideoModal').modal('show')
+    $('#add-video').on('submit', onAddVideo)
   }
 }
 
