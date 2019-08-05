@@ -41,7 +41,9 @@ const onAddVideo = event => {
   const form = event.target
   const formData = getFormFields(form)
   formData.video.user_id = store.user.id
-  console.log(formData)
+  api.addVideo(formData)
+    .then(ui.getProfileSuccess)
+    .catch(console.error)
   // api.updateProfile(formData)
   //   .then(console.log)
   //   .catch(console.error)
@@ -54,9 +56,8 @@ const onDeleteVideo = event => {
   const videoId = $('iframe').data('id')
   // console.log(videoId)
   api.deleteVideo(videoId)
-    .then(onClickProfileTab)
+    .then(ui.getProfileSuccess)
     .catch(console.error)
-  onClickProfileTab()
   $('#deleteVideoPrompt').modal('hide')
 }
 
