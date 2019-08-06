@@ -10,9 +10,9 @@
   {{/if}}
   {{> modal_displayname}}
 
-  {{#if heroIds}}
+  {{#if thing}}
     <p>There is an array of join table entries in here</p>
-    <p>{{joins.array}} this is a test reeee</p>
+    <p>{{thing}} this is a test reeee</p>
   {{else}}
     <p>This join table thing isn't working</p>
   {{/if}}
@@ -64,7 +64,7 @@
     {{#each user.heros as |heroes|}}
     <div class="hover-prompt">
     <!-- <div class="played-hero-tooltip">X</div> -->
-    <img class="hero-profile-icon" data-id="{{getJoinId joins.user_heros heroes.id}}" src={{grabImage id}}>
+    <img class="hero-profile-icon" data-id="{{getJoinId heroes.id arr=thing}}" src={{grabImage id}}>
     <!-- <img class="hero-profile-icon" src={{grabImage id}}> -->
   </div>
     {{/each}}

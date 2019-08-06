@@ -11,13 +11,13 @@ const getProfilesSuccess = data => {
 }
 
 const getProfileSuccess = data => {
-  console.log(data.user.user)
   // data.user.user.joins = data.joins.user_heros
   // const joins = {
   //   array: data.user.user.joins
   // }
   // console.log('Joins:', joins)
-  const showProfileHtml = showProfileTemplate({user: data.user.user, heroIds: data.user.joins})
+  console.log(data.joins.user_heros)
+  const showProfileHtml = showProfileTemplate({user: data.user.user, thing: data.joins.user_heros})
   // const showProfileHtml = showProfileTemplate({user: data.user.user, joinData: joins})
 
   $('.hero-list').html(showProfileHtml)
