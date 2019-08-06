@@ -177,6 +177,9 @@ const addHandlers = () => {
   $('#getPlayers').on('click', onGetUsers)
   $('body').on('click', '.editable', onOpenModals)
   $('body').on('click', '.hero-profile-icon', onOpenRemoveHeroPrompt)
+  $('body').on('click', '.profile-card', () => {
+    console.log('clicked on a profile \\o/')
+  })
 }
 
 module.exports = {
