@@ -63,6 +63,17 @@ const deleteHero = id => {
   })
 }
 
+const addUserHero = data => {
+  return $.ajax({
+    url: config.apiUrl + '/user_heros',
+    method: 'POST',
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   getUsers,
   updateProfile,
@@ -70,5 +81,6 @@ module.exports = {
   deleteVideo,
   deleteHero,
   addVideo,
+  addUserHero,
   getUserHeroJoins
 }

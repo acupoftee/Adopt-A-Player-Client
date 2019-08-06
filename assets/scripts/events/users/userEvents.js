@@ -71,10 +71,20 @@ const onAddVideo = event => {
 const onAddHero = event => {
   event.preventDefault()
   const form = event.target
-  console.log(event.target)
   const formData = getFormFields(form)
-  console.log(formData)
-  console.log('Hero id', (_.invert(heroIds))[formData.hero.name])
+  const heroId = (_.invert(heroIds))[formData.hero.name]
+
+  const userHero = {
+    user_hero: {
+      hero_id: heroId,
+      user_id: store.user.id
+    }
+  }
+  api.addUserHero(userHero)
+    .then(console.log)
+    .catch(console.error)
+
+  $('#addHeroModal').modal('hide')
 }
 
 const onDeleteVideo = event => {
