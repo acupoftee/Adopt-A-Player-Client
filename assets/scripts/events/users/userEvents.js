@@ -2,6 +2,8 @@ const getFormFields = require('../../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../../store')
+const heroIds = require('../heroes/getHeroIds')
+const _ = require('underscore')
 
 const onGetUsers = event => {
   event.preventDefault()
@@ -20,7 +22,11 @@ const onGetUsers = event => {
 // }
 
 const onClickProfileTab = () => {
+  // the user's data and general join table data is saved in a general object
+  // This is going to be passed into our profile handlebars file
   const data = {}
+
+  // get the user profile, and then add their info into data
   api.getUserProfile()
     .then(res => {
       data.user = res
@@ -28,6 +34,8 @@ const onClickProfileTab = () => {
     })
     .catch(console.error)
 
+  // 1. get all the join table data
+  // 2. share the profile and join table info to handlebars
   api.getUserHeroJoins()
     .then(res => {
       data.joins = res
@@ -38,12 +46,6 @@ const onClickProfileTab = () => {
     })
     .catch(console.error)
 }
-
-// const onGetJoins = () => {
-//   api.getUserHeroJoins()
-//     .then(ui.getProfileSuccess)
-//     .catch(console.error)
-// }
 
 const onUpdateProfile = event => {
   event.preventDefault()
@@ -69,8 +71,10 @@ const onAddVideo = event => {
 const onAddHero = event => {
   event.preventDefault()
   const form = event.target
+  console.log(event.target)
   const formData = getFormFields(form)
   console.log(formData)
+  console.log('Hero id', (_.invert(heroIds))[formData.hero.name])
 }
 
 const onDeleteVideo = event => {
@@ -86,7 +90,6 @@ const onDeleteVideo = event => {
 const onDeleteHero = event => {
   event.preventDefault()
   const heroId = store.heroId
-  console.log(heroId)
   api.deleteHero(heroId)
     .then(console.log)
     .catch(console.error)
@@ -125,7 +128,8 @@ const onOpenModals = event => {
     $('#add-video').on('submit', onAddVideo)
   } else if ($target.hasClass('add-hero-option')) {
     $('#addHeroModal').modal('show')
-    $('#add-hero').on('click', onAddHero)
+    // https://stackoverflow.com/questions/2888446/get-the-selected-option-id-with-jquery
+    $('#add-hero').on('submit', onAddHero)
   }
 }
 
@@ -141,10 +145,6 @@ const openVideoDeleteOptions = event => {
 }
 
 const onOpenRemoveHeroPrompt = event => {
-  // console.log('Clicked!')
-  // pass the API the id of the join table entry
-  // in rails, pass in the two foreign keys
-  console.log(event.target)
   store.heroId = $(event.target).data('id')
   $('#deleteHeroPrompt').modal('show')
   $('#delete-hero').on('click', onDeleteHero)
