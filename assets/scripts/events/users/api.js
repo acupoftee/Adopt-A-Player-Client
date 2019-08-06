@@ -53,6 +53,17 @@ const addVideo = data => {
   })
 }
 
+const updateVideo = data => {
+  return $.ajax({
+    url: config.apiUrl + '/videos/' + store.videoId,
+    data,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deleteHero = id => {
   return $.ajax({
     url: config.apiUrl + '/user_heros/' + id,
@@ -77,6 +88,7 @@ const addUserHero = data => {
 module.exports = {
   getUsers,
   updateProfile,
+  updateVideo,
   getUserProfile,
   deleteVideo,
   deleteHero,

@@ -31,7 +31,6 @@ const onClickProfileTab = () => {
   api.getUserProfile()
     .then(res => {
       data.user = res
-      return data
     })
     .catch(console.error)
 
@@ -40,7 +39,6 @@ const onClickProfileTab = () => {
   api.getUserHeroJoins()
     .then(res => {
       data.joins = res
-      return data
     })
     .then(() => {
       ui.getProfileSuccess(data)
@@ -63,7 +61,13 @@ const onUpdateVideo = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(utils.removeBlanks(formData.video))
+  const video = utils.removeBlanks(formData.video)
+  const reqData = {
+    video
+  }
+  api.updateVideo(reqData)
+    .then(console.log)
+    .catch(console.error)
 }
 
 const onAddVideo = event => {
