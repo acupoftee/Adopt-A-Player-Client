@@ -1,9 +1,10 @@
+const _ = require('underscore')
 const getFormFields = require('../../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../../store')
 const heroIds = require('../heroes/getHeroIds')
-const _ = require('underscore')
+const utils = require('../../util/utils')
 
 const onGetUsers = event => {
   event.preventDefault()
@@ -56,6 +57,13 @@ const onUpdateProfile = event => {
     .catch(console.error)
   $('.modal').modal('hide')
   ui.updateProfileView(formData)
+}
+
+const onUpdateVideo = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  console.log(utils.removeBlanks(formData.video))
 }
 
 const onAddVideo = event => {
@@ -132,6 +140,7 @@ const onOpenModals = event => {
     store.videoId = $target.data('id')
     $('#videoOptions').modal('show')
     $('#video-edit-option').on('click', openVideoOptions)
+    $('#video-update').on('submit', onUpdateVideo)
     $('#video-delete-option').on('click', openVideoDeleteOptions)
   } else if ($target.hasClass('add-video-option')) {
     $('#addVideoModal').modal('show')

@@ -14,17 +14,17 @@ const showItems = itemName => {
 // removes any empty key/value pairs from a patch request
 // that have an empty string as a value, e.g.
 // { example: { title: 'thing', text: '' } } -> { example: { title: 'thing' } }
-const removeBlanks = req => {
+const removeBlanks = obj => {
   // we don't know the name of the object in `req`, so we'll apply this to
   // ALL objects in `req`
-  Object.values(req).forEach(obj => {
-    for (const key in obj) {
-      if (obj[key] === '') {
-        // removes both the key and the value, preventing it from being updated
-        delete obj[key]
-      }
+  for (const key in obj) {
+    if (obj[key] === '') {
+      // removes both the key and the value, preventing it from being updated
+      delete obj[key]
     }
-  })
+  }
+
+  return obj
 }
 
 module.exports = {
