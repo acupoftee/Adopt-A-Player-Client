@@ -64,11 +64,6 @@ const onAddVideo = event => {
   api.addVideo(formData)
     .then(console.log)
     .catch(console.error)
-  // api.updateProfile(formData)
-  //   .then(console.log)
-  //   .catch(console.error)
-  // $('.modal').modal('hide')
-  // ui.updateProfileView(formData)
 }
 
 const onAddHero = event => {
@@ -76,17 +71,6 @@ const onAddHero = event => {
   const form = event.target
   const formData = getFormFields(form)
   console.log(formData)
-  // const newHero = {
-  //
-  // }
-  // api.addVideo(formData)
-  //   .then(console.log)
-  //   .catch(console.error)
-  // api.updateProfile(formData)
-  //   .then(console.log)
-  //   .catch(console.error)
-  // $('.modal').modal('hide')
-  // ui.updateProfileView(formData)
 }
 
 const onDeleteVideo = event => {

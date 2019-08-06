@@ -10,10 +10,15 @@ const getProfilesSuccess = data => {
   $('.hero-list').html(showProfilesHtml)
 }
 
-const getProfileSuccess = (data) => {
-  data.user.user.joins = data.joins.user_heros
-  console.log(data.user.user.joins)
-  const showProfileHtml = showProfileTemplate({user: data.user.user})
+const getProfileSuccess = data => {
+  console.log(data.user.user)
+  // data.user.user.joins = data.joins.user_heros
+  // const joins = {
+  //   array: data.user.user.joins
+  // }
+  // console.log('Joins:', joins)
+  const showProfileHtml = showProfileTemplate({user: data.user.user, heroIds: data.user.joins})
+  // const showProfileHtml = showProfileTemplate({user: data.user.user, joinData: joins})
 
   $('.hero-list').html(showProfileHtml)
 }
