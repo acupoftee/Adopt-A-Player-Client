@@ -9,6 +9,12 @@ const getUsers = () => {
   })
 }
 
+const getUserHeroJoins = () => {
+  return $.ajax({
+    url: config.apiUrl + '/user_heros'
+  })
+}
+
 const updateProfile = userData => {
   return $.ajax({
     url: config.apiUrl + '/users/' + store.user.id,
@@ -46,20 +52,23 @@ const addVideo = data => {
     }
   })
 }
-// const deleteHero = (userId, heroId) => {
-//   return $.ajax({
-//     url: config.apiUrl + '/userHero/' + store.user.id,
-//     data: userData,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+
+const deleteHero = id => {
+  return $.ajax({
+    url: config.apiUrl + '/userHero/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   getUsers,
   updateProfile,
   getUserProfile,
   deleteVideo,
-  addVideo
+  deleteHero,
+  addVideo,
+  getUserHeroJoins
 }

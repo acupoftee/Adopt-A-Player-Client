@@ -1,6 +1,6 @@
 const getFormFields = require('../../../../lib/get-form-fields.js')
-const api = require('./api.js')
-const ui = require('./ui.js')
+const api = require('./api')
+const ui = require('./ui')
 const store = require('../../store')
 
 const onGetUsers = event => {
@@ -20,10 +20,30 @@ const onGetUsers = event => {
 // }
 
 const onClickProfileTab = () => {
+  const data = {}
   api.getUserProfile()
-    .then(ui.getProfileSuccess)
+    .then(res => {
+      data.user = res
+      return data
+    })
+    .catch(console.error)
+
+  api.getUserHeroJoins()
+    .then(res => {
+      data.joins = res
+      return data
+    })
+    .then(() => {
+      ui.getProfileSuccess(data)
+    })
     .catch(console.error)
 }
+
+// const onGetJoins = () => {
+//   api.getUserHeroJoins()
+//     .then(ui.getProfileSuccess)
+//     .catch(console.error)
+// }
 
 const onUpdateProfile = event => {
   event.preventDefault()
@@ -42,8 +62,26 @@ const onAddVideo = event => {
   const formData = getFormFields(form)
   formData.video.user_id = store.user.id
   api.addVideo(formData)
-    .then(ui.getProfileSuccess)
+    .then(console.log)
     .catch(console.error)
+  // api.updateProfile(formData)
+  //   .then(console.log)
+  //   .catch(console.error)
+  // $('.modal').modal('hide')
+  // ui.updateProfileView(formData)
+}
+
+const onAddHero = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  console.log(formData)
+  // const newHero = {
+  //
+  // }
+  // api.addVideo(formData)
+  //   .then(console.log)
+  //   .catch(console.error)
   // api.updateProfile(formData)
   //   .then(console.log)
   //   .catch(console.error)
@@ -53,10 +91,10 @@ const onAddVideo = event => {
 
 const onDeleteVideo = event => {
   event.preventDefault()
-  const videoId = $('iframe').data('id')
-  // console.log(videoId)
+  const videoId = store.videoId
+  console.log(videoId)
   api.deleteVideo(videoId)
-    .then(ui.getProfileSuccess)
+    .then(console.log)
     .catch(console.error)
   $('#deleteVideoPrompt').modal('hide')
 }
@@ -84,12 +122,16 @@ const onOpenModals = event => {
     $('#skill-rating').on('submit', onUpdateProfile)
     $('#newSkillRating').modal('hide')
   } else if ($target.hasClass('edit-video')) {
+    store.videoId = $target.data('id')
     $('#videoOptions').modal('show')
     $('#video-edit-option').on('click', openVideoOptions)
     $('#video-delete-option').on('click', openVideoDeleteOptions)
   } else if ($target.hasClass('add-video-option')) {
     $('#addVideoModal').modal('show')
     $('#add-video').on('submit', onAddVideo)
+  } else if ($target.hasClass('add-hero-option')) {
+    $('#addHeroModal').modal('show')
+    $('#add-hero').on('click', onAddHero)
   }
 }
 
@@ -108,6 +150,7 @@ const onOpenRemoveHeroPrompt = event => {
   // console.log('Clicked!')
   // pass the API the id of the join table entry
   // in rails, pass in the two foreign keys
+  console.log(event.target)
   $('#deleteHeroPrompt').modal('show')
   $('#delete-hero').on('click', () => {
     console.log('Byeeeeeeeeeee')
