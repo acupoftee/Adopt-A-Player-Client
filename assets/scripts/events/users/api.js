@@ -55,7 +55,7 @@ const addVideo = data => {
 
 const deleteHero = id => {
   return $.ajax({
-    url: config.apiUrl + '/userHero/' + id,
+    url: config.apiUrl + '/user_heros/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

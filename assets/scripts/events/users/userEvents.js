@@ -83,6 +83,16 @@ const onDeleteVideo = event => {
   $('#deleteVideoPrompt').modal('hide')
 }
 
+const onDeleteHero = event => {
+  event.preventDefault()
+  const heroId = store.heroId
+  console.log(heroId)
+  api.deleteHero(heroId)
+    .then(console.log)
+    .catch(console.error)
+  $('#deleteHeroPrompt').modal('hide')
+}
+
 const onOpenModals = event => {
   const $target = $(event.target)
   if ($target.hasClass('edit-display-name')) {
@@ -135,11 +145,9 @@ const onOpenRemoveHeroPrompt = event => {
   // pass the API the id of the join table entry
   // in rails, pass in the two foreign keys
   console.log(event.target)
+  store.heroId = $(event.target).data('id')
   $('#deleteHeroPrompt').modal('show')
-  $('#delete-hero').on('click', () => {
-    console.log('Byeeeeeeeeeee')
-    $('#deleteHeroPrompt').modal('hide')
-  })
+  $('#delete-hero').on('click', onDeleteHero)
 }
 
 const addHandlers = () => {
