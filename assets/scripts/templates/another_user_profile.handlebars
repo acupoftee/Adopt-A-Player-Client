@@ -33,21 +33,20 @@
   {{#if user.heros}}
     <h2>Heroes:</h2>
     <div class="hero-icon-container">
-    {{#each user.heros as |heroes|}}
-    <img class="hero-profile-icon" src={{grabImage id}}>
-  </div>
-    {{/each}}
-  </div>
-  {{/if}}
+      {{#each user.heros as |heroes|}}
+        <img class="hero-profile-icon" src={{grabImage id}}>
+      {{/each}}
+    </div>
+{{/if}}
 
-  {{#if user.videos}}
-    </br>
-    <h2>Videos:</h2>
-    {{#each user.videos as |video|}}
+{{#if user.videos}}
+  </br>
+  <h2>Videos:</h2>
+  {{#each user.videos as |video|}}
     </br>
     <h5 data-id="{{video.id}}">{{video.title}}</h5>
     <iframe width="420" height="345" data-id="{{video.id}}" src={{grabVideoUrl video.url}}></iframe>
     </br>
-    {{/each}}
-  {{/if}}
+  {{/each}}
+{{/if}}
 </div>
