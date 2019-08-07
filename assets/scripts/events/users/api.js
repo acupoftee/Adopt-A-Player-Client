@@ -32,6 +32,12 @@ const getUserProfile = () => {
   })
 }
 
+const getOutsideUserProfile = id => {
+  return $.ajax({
+    url: config.apiUrl + '/users/' + id
+  })
+}
+
 const deleteVideo = id => {
   return $.ajax({
     url: config.apiUrl + '/videos/' + id,
@@ -94,5 +100,6 @@ module.exports = {
   deleteHero,
   addVideo,
   addUserHero,
-  getUserHeroJoins
+  getUserHeroJoins,
+  getOutsideUserProfile
 }

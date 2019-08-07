@@ -4,6 +4,8 @@ const showProfilesTemplate = require('../../templates/profile-listing.handlebars
 
 const showProfileTemplate = require('../../templates/profile.handlebars')
 
+const showOutsideProfileTemplate = require('../../templates/another_user_profile.handlebars')
+
 const getProfilesSuccess = data => {
   const showProfilesHtml = showProfilesTemplate({users: data.users})
 
@@ -12,6 +14,12 @@ const getProfilesSuccess = data => {
 
 const getProfileSuccess = data => {
   const showProfileHtml = showProfileTemplate({user: data.user.user, thing: data.joins.user_heros})
+
+  $('.hero-list').html(showProfileHtml)
+}
+
+const getOutsideProfileSuccess = data => {
+  const showProfileHtml = showOutsideProfileTemplate({ user: data.user })
 
   $('.hero-list').html(showProfileHtml)
 }
@@ -42,5 +50,6 @@ const updateProfileView = formData => {
 module.exports = {
   getProfilesSuccess,
   getProfileSuccess,
+  getOutsideProfileSuccess,
   updateProfileView
 }

@@ -4,22 +4,22 @@
       {{#each this}}
           <section data-id="{{id}}" class="profile-card">
             {{#if avatar_url}}
-              <img class="profile-pic" src={{avatar_url}}>
+              <img class="profile-pic" data-id="{{id}}" src={{avatar_url}}>
             {{else}}
-                <img class="profile-pic" src="https://pbs.twimg.com/media/DEYvBMSVYAAiTnF.png">
+                <img class="profile-pic" data-id="{{id}}" src="https://pbs.twimg.com/media/DEYvBMSVYAAiTnF.png">
             {{/if}}
               {{#if display_name}}
-                <h3>{{display_name}}</h3>
+                <h3 data-id="{{id}}">{{display_name}}</h3>
               {{else}}
-                <h3>{{email}}</h3>
+                <h3 data-id="{{id}}">{{email}}</h3>
               {{/if}}
             </h3>
             {{#if platform}}
-              <h6>
+              <h6 data-id="{{id}}">
                 Platform: {{platform}}
               </h6>
             {{/if}}
-            <p>
+            <p data-id="{{id}}">
               {{summary}}
             </p>
           </section>

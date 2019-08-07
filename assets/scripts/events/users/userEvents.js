@@ -118,6 +118,13 @@ const onDeleteHero = event => {
   $('#deleteHeroPrompt').modal('hide')
 }
 
+const onOpenOutsideProfile = event => {
+  const userId = $(event.target).data('id')
+  api.getOutsideUserProfile(userId)
+    .then(ui.getOutsideProfileSuccess)
+    .catch(console.error)
+}
+
 const onOpenModals = event => {
   const $target = $(event.target)
   if ($target.hasClass('edit-display-name')) {
@@ -177,9 +184,7 @@ const addHandlers = () => {
   $('#getPlayers').on('click', onGetUsers)
   $('body').on('click', '.editable', onOpenModals)
   $('body').on('click', '.hero-profile-icon', onOpenRemoveHeroPrompt)
-  $('body').on('click', '.profile-card', () => {
-    console.log('clicked on a profile \\o/')
-  })
+  $('body').on('click', '.profile-card', onOpenOutsideProfile)
 }
 
 module.exports = {
