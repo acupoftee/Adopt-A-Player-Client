@@ -6,11 +6,7 @@
   @include media-breakpoint-up(lg) {
     @include make-col(3);
   }
-  // background: #2e2e2e;
-  // background: linear-gradient(to bottom, #232526, #414345);
-//   background-color: #000000;
-// background-image: linear-gradient(135deg, #000000, #414141);
-  background-color: #2d3547;
+  background-color: #202634; //#2d3547;
   border-radius: 10px;
   cursor: pointer;
   color: white;
@@ -37,9 +33,7 @@
   @include media-breakpoint-up(lg) {
     @include make-col(2);
   }
-  // background: #2e2e2e;
-  // background: linear-gradient(to bottom, #232526, #414345);
-  background-color: #2d3547;
+  background-color: #202634; //#2d3547;
   border-radius: 10px;
   cursor: pointer;
   color: white;

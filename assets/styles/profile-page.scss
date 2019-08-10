@@ -1,4 +1,4 @@
-$profile-background: #414345;
+$profile-background: #2d3547;//#414345;
 
 iframe {
   border-color: $profile-background;
@@ -45,8 +45,9 @@ iframe {
 // background: linear-gradient(to top, #2b4162, #12100e 94%);
 
   // background: #12100e;
-  background-color: #000000;
-background-image: linear-gradient(to bottom, #000000, #414141);
+//   background-color: #000000;
+// background-image: linear-gradient(to bottom, #000000, #414141);
+background-color: #2d3547;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   color: white;
@@ -101,7 +102,7 @@ background-image: linear-gradient(to bottom, #000000, #414141);
 }
 
 .details {
-  background-color: #222;
+  background-color: #202634;//#222;
   color: white;
   display: flex;
   justify-content: space-between;
