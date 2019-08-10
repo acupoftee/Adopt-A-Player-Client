@@ -92,7 +92,10 @@ const onAddHero = event => {
     .then(() => {
       onClickProfileTab(event)
     })
-    .then(() => $('.add-h-modal').modal('hide'))
+    .then(() => {
+      $('#addHeroModal').modal('hide')
+      utils.removeModalBackdrop()
+    })
     .catch(console.error)
 }
 
@@ -114,8 +117,7 @@ const onDeleteHero = event => {
   api.deleteHero(heroId)
     .then(() => {
       $('#deleteHeroPrompt').modal('hide')
-      $('body').removeClass('modal-open')
-      $('.modal-backdrop').remove()
+      utils.removeModalBackdrop()
     })
     .then(() => {
       onClickProfileTab(event)
