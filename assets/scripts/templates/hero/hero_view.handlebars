@@ -1,0 +1,13 @@
+{{#if user.heros}}
+  <h2>Heroes:</h2>
+  <p class="editable add-hero-option">Add New Hero</p>
+  <div class="hero-icon-container">
+    {{#each user.heros as |heroes|}}
+      <div class="hover-prompt">
+        <img class="hero-profile-icon" data-id="{{getJoinId heroes.id arr=thing}}" src="{{grabImage id}}" />
+      </div>
+    {{/each}}
+  </div>
+{{else}}
+  <p class="editable edit-heroes">Add Heroes</p>
+{{/if}}

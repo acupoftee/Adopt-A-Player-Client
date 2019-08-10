@@ -1,5 +1,5 @@
 <div class="profile-container container">
-  <img class="profile-pic-main" src={{user.avatar_url}}>
+  <img class="profile-pic-main" src="{{user.avatar_url}}"/>
 
   {{#if user.display_name}}
     <h1 class="editable edit-display-name">{{user.display_name}}</h1>
@@ -50,19 +50,8 @@
     <p class="in-profile-edit edit-skill-rating">Add Skill Rating</p>
   {{/if}}
 
-  {{#if user.heros}}
-    <h2>Heroes:</h2>
-    <p class="editable add-hero-option">Add New Hero</p>
-    <div class="hero-icon-container">
-    {{#each user.heros as |heroes|}}
-    <div class="hover-prompt">
-    <img class="hero-profile-icon" data-id="{{getJoinId heroes.id arr=thing}}" src={{grabImage id}}>
-  </div>
-    {{/each}}
-  </div>
-  {{else}}
-    <p class="editable edit-heroes">Add Heroes</p>
-  {{/if}}
+  {{> hero/hero_view}}
+
 
   {{#if user.videos}}
     </br>
@@ -71,14 +60,15 @@
     {{#each user.videos as |video|}}
     </br>
     <h5 class="editable edit-video" data-id="{{video.id}}">{{video.title}}</h5>
-    <iframe width="420" height="345" data-id="{{video.id}}" src={{grabVideoUrl video.url}}></iframe>
+    <iframe width="420" height="345" data-id="{{video.id}}" src="{{grabVideoUrl video.url}}"></iframe>
     </br>
     {{/each}}
   {{else}}
       <p class="editable add-video-option">Add New Video</p>
   {{/if}}
 </div>
-{{> modal_delete_hero}}
+
+{{> hero/modal_delete_hero}}
 {{> hero/modal_add_hero}}
 {{> video/modal_video}}
 {{> video/modal_edit_video}}

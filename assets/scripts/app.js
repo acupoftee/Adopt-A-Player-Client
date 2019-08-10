@@ -30,20 +30,6 @@ $(() => {
   $('.goToProfile').on('click', userEvents.onClickProfileTab)
 
   // https://stackoverflow.com/questions/9827095/is-it-possible-to-use-jquery-on-and-hover
-  //
-  //   $(".selector").on({
-  //     mouseenter: function () {
-  //         //stuff to do on mouse enter
-  //     },
-  //     mouseleave: function () {
-  //         //stuff to do on mouse leave
-  //     }
-  // })
-
-  // $('.hero-profile-icon').on({
-  //   mouseenter: profileEvents.showHeroDeleteTooltip,
-  //   mouseleave: profileEvents.hideHeroDeleteTooltip
-  // })
 
   // HANDLEBAR EVENTS
   heroEvents.addHandlers()

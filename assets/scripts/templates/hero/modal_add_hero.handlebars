@@ -1,4 +1,4 @@
-<div class="modal fade" id="addHeroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade add-h-modal" id="addHeroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -10,47 +10,46 @@
       <div class="modal-body">
         <div class="modal-greeting">
           <h5>Add a new hero.</h5>
-          <p class="add-video-error hidden">Make sure to fill out all fields!</p>
+          <p class="add-hero-error hidden">Make sure to fill out all fields!</p>
         </div>
         <form id="add-hero">
           <div class="form-group">
             <label for="heroSelectForm">Select Hero</label>
-            <p class="hidden">Choices:</p>
             <select name="hero[name]" class="form-control" id="heroSelectForm" required>
-              <option data-id=1>Ana</option>
-              <option data-id=2>Ashe</option>
-              <option data-id=3>Baptiste</option>
-              <option data-id=4>Bastion</option>
-              <option data-id=5>Brigitte</option>
-              <option data-id=6>D.Va</option>
-              <option data-id=7>Doomfist</option>
-              <option data-id=8>Genji</option>
-              <option data-id=9>Hanzo</option>
-              <option data-id=10>Junkrat</option>
-              <option data-id=11>Lúcio</option>
-              <option data-id=12>McCree</option>
-              <option data-id=13>Mei</option>
-              <option data-id=14>Mercy</option>
-              <option data-id=15>Moira</option>
-              <option data-id=16>Orisa</option>
-              <option data-id=17>Phararh</option>
-              <option data-id=18>Reaper</option>
-              <option data-id=19>Reinhardt</option>
-              <option data-id=20>Roadhog</option>
-              <option data-id=21>Sigma</option>
-              <option data-id=22>Soldier: 76</option>
-              <option data-id=23>Sombra</option>
-              <option data-id=24>Symmetra</option>
-              <option data-id=25>Torbjörn</option>
-              <option data-id=26>Tracer</option>
-              <option data-id=27>Widowmaker</option>
-              <option data-id=28>Winston</option>
-              <option data-id=29>Wrecking Ball</option>
-              <option data-id=30>Zarya</option>
-              <option data-id=31>Zenyatta</option>
+              <option data-id="1">Ana</option>
+              <option data-id="2"onload="">Ashe</option>
+              <option data-id="3">Baptiste</option>
+              <option data-id="4">Bastion</option>
+              <option data-id="5">Brigitte</option>
+              <option data-id="6">D.Va</option>
+              <option data-id="7">Doomfist</option>
+              <option data-id="8">Genji</option>
+              <option data-id="9">Hanzo</option>
+              <option data-id="10">Junkrat</option>
+              <option data-id="11">Lúcio</option>
+              <option data-id="12">McCree</option>
+              <option data-id="13">Mei</option>
+              <option data-id="14">Mercy</option>
+              <option data-id="15">Moira</option>
+              <option data-id="16">Orisa</option>
+              <option data-id="17">Phararh</option>
+              <option data-id="18">Reaper</option>
+              <option data-id="19">Reinhardt</option>
+              <option data-id="20">Roadhog</option>
+              <option data-id="21">Sigma</option>
+              <option data-id="22">Soldier: 76</option>
+              <option data-id="23">Sombra</option>
+              <option data-id="24">Symmetra</option>
+              <option data-id="25">Torbjörn</option>
+              <option data-id="26">Tracer</option>
+              <option data-id="27">Widowmaker</option>
+              <option data-id="28">Winston</option>
+              <option data-id="29">Wrecking Ball</option>
+              <option data-id="30">Zarya</option>
+              <option data-id="31">Zenyatta</option>
             </select>
           </div>
-          <button class="btn btn-primary">Add Hero</button>
+          <button class="btn btn-primary" type="submit">Add Hero</button>
         </form>
       </div>
     </div>

@@ -13,24 +13,17 @@ const onGetUsers = event => {
     .catch(console.error)
 }
 
-// const onEditProfile = event => {
-//   event.preventDefault()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   api.updateProfile(formData)
-//     .then(console.log)
-//     .catch(console.error)
-// }
+store.profileData = {}
 
-const onClickProfileTab = () => {
+const onClickProfileTab = event => {
+  // $('.modal').modal('hide')
   // the user's data and general join table data is saved in a general object
   // This is going to be passed into our profile handlebars file
-  const data = {}
 
   // get the user profile, and then add their info into data
   api.getUserProfile()
     .then(res => {
-      data.user = res
+      store.profileData.user = res
     })
     .catch(console.error)
 
@@ -38,10 +31,10 @@ const onClickProfileTab = () => {
   // 2. share the profile and join table info to handlebars
   api.getUserHeroJoins()
     .then(res => {
-      data.joins = res
+      store.profileData.joins = res
     })
     .then(() => {
-      ui.getProfileSuccess(data)
+      ui.getProfileSuccess(store.profileData)
     })
     .catch(console.error)
 }
@@ -51,10 +44,11 @@ const onUpdateProfile = event => {
   const form = event.target
   const formData = getFormFields(form)
   api.updateProfile(formData)
-    .then(console.log)
+    .then(() => {
+      $('.modal').modal('hide')
+      ui.updateProfileView(formData)
+    })
     .catch(console.error)
-  $('.modal').modal('hide')
-  ui.updateProfileView(formData)
 }
 
 const onUpdateVideo = event => {
@@ -76,7 +70,7 @@ const onAddVideo = event => {
   const formData = getFormFields(form)
   formData.video.user_id = store.user.id
   api.addVideo(formData)
-    .then(console.log)
+    .then(() => onClickProfileTab())
     .catch(console.error)
 }
 
@@ -92,11 +86,14 @@ const onAddHero = event => {
       user_id: store.user.id
     }
   }
+
   api.addUserHero(userHero)
     .then(console.log)
+    .then(() => {
+      onClickProfileTab(event)
+    })
+    .then(() => $('.add-h-modal').modal('hide'))
     .catch(console.error)
-
-  $('#addHeroModal').modal('hide')
 }
 
 const onDeleteVideo = event => {
@@ -105,17 +102,25 @@ const onDeleteVideo = event => {
   console.log(videoId)
   api.deleteVideo(videoId)
     .then(console.log)
+    .then(() => {
+      $('#deleteVideoPrompt').modal('hide')
+    })
     .catch(console.error)
-  $('#deleteVideoPrompt').modal('hide')
 }
 
 const onDeleteHero = event => {
   event.preventDefault()
   const heroId = store.heroId
   api.deleteHero(heroId)
-    .then(console.log)
+    .then(() => {
+      $('#deleteHeroPrompt').modal('hide')
+      $('body').removeClass('modal-open')
+      $('.modal-backdrop').remove()
+    })
+    .then(() => {
+      onClickProfileTab(event)
+    })
     .catch(console.error)
-  $('#deleteHeroPrompt').modal('hide')
 }
 
 const onOpenOutsideProfile = event => {
@@ -189,7 +194,6 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  // onEditProfile,
   onClickProfileTab,
   onUpdateProfile
 }
