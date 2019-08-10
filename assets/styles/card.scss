@@ -1,0 +1,43 @@
+.profile-card {
+  @include make-col-ready;
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(3);
+  }
+  background: #2e2e2e;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  margin: 5px;
+  outline: none;
+  padding: 1rem;
+  text-align: center;
+  transition: .2s ease;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.hero-card {
+  @include make-col-ready;
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(2);
+  }
+  background: $white;
+  border: 1px solid;
+  cursor: pointer;
+  margin: 1px;
+  outline: none;
+  padding: 1rem;
+  text-align: center;
+}

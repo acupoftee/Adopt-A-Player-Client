@@ -2,6 +2,7 @@
 @import 'menu.scss';
 @import 'home.scss';
 @import 'profile-page.scss';
+@import 'card.scss';
 
 $button: #FF9933;
 
@@ -30,44 +31,6 @@ a {
 .btn-primary:not(:disabled):not(.disabled).active {
   background-color: $button;
   border-color: $button;
-}
-
-.profile-card {
-  @include make-col-ready;
-  @include media-breakpoint-up(md) {
-    @include make-col(6);
-  }
-  @include media-breakpoint-up(lg) {
-    @include make-col(3);
-  }
-  background: $white;
-  border: 1px solid;
-  cursor: pointer;
-  margin: 5px;
-  outline: none;
-  padding: 1rem;
-  text-align: center;
-
-  p {
-    margin-bottom: 0;
-  }
-}
-
-.hero-card {
-  @include make-col-ready;
-  @include media-breakpoint-up(md) {
-    @include make-col(6);
-  }
-  @include media-breakpoint-up(lg) {
-    @include make-col(2);
-  }
-  background: $white;
-  border: 1px solid;
-  cursor: pointer;
-  margin: 1px;
-  outline: none;
-  padding: 1rem;
-  text-align: center;
 }
 
 .intro-footer {

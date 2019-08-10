@@ -1,7 +1,7 @@
 $profile-background: #2e2e2e;
 
 .profile-container {
-  background-color: $profile-background;
+  background-color: rgba($profile-background, .8);
   border-radius: 30px;
   color: white;
   margin: 10% auto;
@@ -16,7 +16,7 @@ $profile-background: #2e2e2e;
 .add-hero-option,
 .add-video-option {
   &:hover {
-    color: blue;
+    color: #FF9933;
     cursor: pointer;
   }
 }
@@ -50,7 +50,7 @@ $profile-background: #2e2e2e;
 
   &:hover {
     cursor: pointer;
-    border: red 4px solid;
+    border: #FF9933 4px solid;
 
     // .played-hero-tooltip {
     //   position: relative;
