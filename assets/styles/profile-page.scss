@@ -1,7 +1,16 @@
+$profile-background: #2e2e2e;
+
 .profile-container {
-  background-color: white;
+  background-color: $profile-background;
+  border-radius: 30px;
+  color: white;
   margin: 10% auto;
   padding: 10%;
+  text-align: center;
+
+  .modal {
+    color: black;
+  }
 }
 
 .add-hero-option,
@@ -31,7 +40,7 @@
 }
 
 .hero-profile-icon {
-  border: white 4px solid;
+  border: $profile-background 4px solid;
   border-radius: 100%;
   object-fit: cover;
   height: 54px;
@@ -67,8 +76,4 @@
   margin-bottom: 3%;
   height: 350px;
   width: 350px;
-}
-
-.profile-container {
-  text-align: center;
 }
