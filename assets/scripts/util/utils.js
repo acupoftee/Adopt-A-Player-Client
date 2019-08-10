@@ -23,7 +23,6 @@ const removeBlanks = obj => {
       delete obj[key]
     }
   }
-
   return obj
 }
 
