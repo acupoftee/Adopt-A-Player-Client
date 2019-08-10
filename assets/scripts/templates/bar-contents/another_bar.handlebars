@@ -1,0 +1,37 @@
+<div class="details">
+  <div class="detail">
+    <h5>Status</h5>
+    {{#if user.is_mentor}}
+      <p>Mentor</p>
+    {{else}}
+      <p>Up for Adoption</p>
+    {{/if}}
+  </div>
+  <div class="detail">
+    <h5>Platform</h5>
+    {{#if user.platform}}
+      <p><span>{{user.platform}}</span></p>
+    {{else}}
+      <p>N/A</p>
+    {{/if}}
+  </div>
+
+  <div class="detail">
+    <h5>Region</h5>
+     {{#if user.region}}
+      <p><span>{{user.region}}</span></p>
+    {{else}}
+      <p>N/A</p>
+    {{/if}}
+  </div>
+
+
+  <div class="detail">
+    <h5>Skill Rating</h5>
+    {{#if user.skill_rating}}
+      <p><span>{{user.skill_rating}}</span></p>
+    {{else}}
+      <p>N/A</p>
+    {{/if}}
+  </div>
+</div>

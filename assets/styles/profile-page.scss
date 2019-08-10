@@ -1,16 +1,57 @@
-$profile-background: #2e2e2e;
+$profile-background: #414345;
 
+iframe {
+  border-color: $profile-background;
+}
 .profile-container {
-  background-color: rgba($profile-background, .8);
+  background-color: $profile-background;
   border-radius: 30px;
+  // color: white;
   color: white;
-  margin: 10% auto;
-  padding: 10%;
+  margin: 5% 20% 10%;
   text-align: center;
+  padding-bottom: 10%;
 
   .modal {
     color: black;
   }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  & > * {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.editable,
+.in-profile-edit {
+
+  &:hover {
+    color: #FF9933;
+    cursor: pointer;
+  }
+}
+
+.profile-header {
+  // background: linear-gradient(to bottom, #ff4b1f, #ff9068);
+  // background: #FF9933;
+  // background: linear-gradient(to bottom, #232526, #414345);
+  // background: linear-gradient(to bottom, #141e30, #243b55);
+  // background: linear-gradient(to top, #333, #000428);
+  // background: linear-gradient(to bottom, #16222a, #3a6073);
+// background: linear-gradient(to top, #2b4162, #12100e 94%);
+
+  // background: #12100e;
+  background-color: #000000;
+background-image: linear-gradient(to bottom, #000000, #414141);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  color: white;
+  height: 100%;
+  padding: 5% 0;
 }
 
 .add-hero-option,
@@ -34,12 +75,13 @@ $profile-background: #2e2e2e;
   height: 12px;
   width: 12px;
   position: relative;
-  font-size: .5em;
+  font-size: 0.5em;
   font-weight: 400;
   // visibility: hidden;
 }
 
 .hero-profile-icon {
+  // border-radius: red 4px solid;
   border: $profile-background 4px solid;
   border-radius: 100%;
   object-fit: cover;
@@ -51,11 +93,37 @@ $profile-background: #2e2e2e;
   &:hover {
     cursor: pointer;
     border: #FF9933 4px solid;
-
     // .played-hero-tooltip {
     //   position: relative;
     //   visibility: visible;
     // }
+  }
+}
+
+.details {
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
+  margin-bottom: 2%;
+
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    padding-top: 1rem;
+
+    h5 {
+      font-size: 1.8em;
+      transform: uppercase;
+    }
+    p {
+      font-size: 1em;
+    }
   }
 }
 
@@ -66,6 +134,7 @@ $profile-background: #2e2e2e;
 .profile-pic {
   // https://alligator.io/css/cropping-images-object-fit/
   border-radius: 100%;
+  border: 4px solid #2e2e2e;
   object-fit: cover;
   height: 150px;
   width: 150px;
@@ -73,7 +142,22 @@ $profile-background: #2e2e2e;
 
 .profile-pic-main {
   @extend .profile-pic;
-  margin-bottom: 3%;
-  height: 350px;
-  width: 350px;
+  margin-bottom: 1%;
+  height: 250px;
+  width: 250px;
+}
+
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+
+  iframe {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+  }
 }

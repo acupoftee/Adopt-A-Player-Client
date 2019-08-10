@@ -1,52 +1,35 @@
-<div class="profile-container container">
-  <img class="profile-pic-main" src={{user.avatar_url}}>
+<div class="profile-container">
+  <div class="profile-header">
+    <img class="profile-pic-main" src="{{user.avatar_url}}"/>
+    {{#if user.display_name}}
+      <h1>{{user.display_name}}</h1>
+      <!-- <p class="in-profile-edit">Edit</p> -->
+    {{else}}
+      <h1>{{user.email}}</h1>
+    {{/if}}
 
-  {{#if user.display_name}}
-    <h1>{{user.display_name}}</h1>
-  {{else}}
-    <h1>{{user.email}}</h1>
-  {{/if}}
+    {{#if user.summary}}
+      <p>{{user.summary}}</p>
+    {{/if}}
 
-  {{#if user.summary}}
-    <p>{{user.summary}}</p>
-  {{/if}}
+  </div>
+  {{> bar-contents/another_bar}}
 
-  {{#if user.is_mentor}}
-    <p>Mentor</p>
-  {{else}}
-    <p>Up for Adoption</p>
-  {{/if}}
-
-
-  {{#if user.platform}}
-    <p>Platform: <span>{{user.platform}}</span></p>
-  {{/if}}
-
-  {{#if user.region}}
-    <p>Region: <span>{{user.region}}</span></p>
-  {{/if}}
-
-  {{#if user.skill_rating}}
-    <p>Skill Rating: <span>{{user.skill_rating}}</span></p>
-  {{/if}}
-
-  {{#if user.heros}}
-    <h2>Heroes:</h2>
-    <div class="hero-icon-container">
-      {{#each user.heros as |heroes|}}
-        <img class="hero-profile-icon outside" src={{grabImage id}}>
-      {{/each}}
-    </div>
-{{/if}}
-
-{{#if user.videos}}
-  </br>
-  <h2>Videos:</h2>
-  {{#each user.videos as |video|}}
+    {{> hero/another_hero_view}}
+    <div class="video-view">
+  {{#if user.videos}}
+    </br>
+    <h2>Videos:</h2>
+    {{#each user.videos as |video|}}
     </br>
     <h5 data-id="{{video.id}}">{{video.title}}</h5>
-    <iframe width="420" height="345" data-id="{{video.id}}" src={{grabVideoUrl video.url}}></iframe>
+    <div class="video-wrapper">
+    <iframe width="560" height="340" data-id="{{video.id}}" src="{{grabVideoUrl video.url}}"></iframe>
+  </div>
     </br>
-  {{/each}}
-{{/if}}
+    {{/each}}
+  {{else}}
+      <p>This user doesn't have any VODs yet.</p>
+  {{/if}}
+</div>
 </div>
