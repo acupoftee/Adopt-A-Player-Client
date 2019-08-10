@@ -6,6 +6,23 @@ const store = require('../../store')
 const heroIds = require('../heroes/getHeroIds')
 const utils = require('../../util/utils')
 
+const openVideoOptions = event => {
+  $('#editVideoModal').modal('show')
+  $('#videoOptions').modal('hide')
+}
+
+const openVideoDeleteOptions = event => {
+  $('#deleteVideoPrompt').modal('show')
+  $('#videoOptions').modal('hide')
+  $('#delete-video').on('click', onDeleteVideo)
+}
+
+const onOpenRemoveHeroPrompt = event => {
+  store.heroId = $(event.target).data('id')
+  $('#deleteHeroPrompt').modal('show')
+  $('#delete-hero').on('click', onDeleteHero)
+}
+
 const onGetUsers = event => {
   event.preventDefault()
   api.getUsers()
@@ -13,12 +30,10 @@ const onGetUsers = event => {
     .catch(console.error)
 }
 
-store.profileData = {}
-
 const onClickProfileTab = event => {
-  // $('.modal').modal('hide')
   // the user's data and general join table data is saved in a general object
   // This is going to be passed into our profile handlebars file
+  store.profileData = {}
 
   // get the user profile, and then add their info into data
   api.getUserProfile()
@@ -60,7 +75,11 @@ const onUpdateVideo = event => {
     video
   }
   api.updateVideo(reqData)
-    .then(console.log)
+    .then(() => onClickProfileTab(event))
+    .then(() => {
+      $('#editVideModal').modal('hide')
+      utils.removeModalBackdrop()
+    })
     .catch(console.error)
 }
 
@@ -70,7 +89,11 @@ const onAddVideo = event => {
   const formData = getFormFields(form)
   formData.video.user_id = store.user.id
   api.addVideo(formData)
-    .then(() => onClickProfileTab())
+    .then(() => onClickProfileTab(event))
+    .then(() => {
+      $('#addVideModal').modal('hide')
+      utils.removeModalBackdrop()
+    })
     .catch(console.error)
 }
 
@@ -105,8 +128,10 @@ const onDeleteVideo = event => {
   console.log(videoId)
   api.deleteVideo(videoId)
     .then(console.log)
+    .then(() => onClickProfileTab(event))
     .then(() => {
       $('#deleteVideoPrompt').modal('hide')
+      utils.removeModalBackdrop()
     })
     .catch(console.error)
 }
@@ -168,23 +193,6 @@ const onOpenModals = event => {
     // https://stackoverflow.com/questions/2888446/get-the-selected-option-id-with-jquery
     $('#add-hero').on('submit', onAddHero)
   }
-}
-
-const openVideoOptions = event => {
-  $('#editVideoModal').modal('show')
-  $('#videoOptions').modal('hide')
-}
-
-const openVideoDeleteOptions = event => {
-  $('#deleteVideoPrompt').modal('show')
-  $('#videoOptions').modal('hide')
-  $('#delete-video').on('click', onDeleteVideo)
-}
-
-const onOpenRemoveHeroPrompt = event => {
-  store.heroId = $(event.target).data('id')
-  $('#deleteHeroPrompt').modal('show')
-  $('#delete-hero').on('click', onDeleteHero)
 }
 
 const addHandlers = () => {
