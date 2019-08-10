@@ -27,8 +27,13 @@ const removeBlanks = obj => {
   return obj
 }
 
+const removeModalBackdrop = () => {
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
+}
 module.exports = {
   hideItems,
   showItems,
-  removeBlanks
+  removeBlanks,
+  removeModalBackdrop
 }
