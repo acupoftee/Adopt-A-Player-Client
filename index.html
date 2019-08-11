@@ -46,10 +46,10 @@
 
     <!-- SIGN IN MODAL -->
     <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Login</h5> -->
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -62,15 +62,26 @@
             </div>
             <form id="sign-in">
               <div class="form-group">
-                <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
+                <div class="input-group addon">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                  <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
+                </div>
               </div>
               <div class="form-group">
-                <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
+                <div class="input-group addon">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-key"></i>
+                  </span>
+                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
+                </div>
               </div>
-              <button class="btn btn-primary">Sign In</button>
+              <button class="btn btn-success btn-block">Sign In</button>
             </form>
           </div>
           <div class="modal-footer">
+            <div class="WordDividerLine-container"></div>
             <small class="modal-redirect">No account yet? <a href="#" class="signUp">Sign up</a>!</small>
           </div>
         </div>
