@@ -1,16 +1,15 @@
 <div class="modal fade add-h-modal" id="addHeroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Hero</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="modal-greeting">
-          <h5>Add a new hero.</h5>
-          <p class="add-hero-error hidden">Make sure to fill out all fields!</p>
+          <h5>Add New Hero</h5>
+          <!-- <p class="add-hero-error hidden">Make sure to fill out all fields!</p> -->
         </div>
         <form id="add-hero">
           <div class="form-group">
@@ -49,7 +48,8 @@
               <option data-id="31">Zenyatta</option>
             </select>
           </div>
-          <button class="btn btn-primary" type="submit">Add Hero</button>
+          <button class="btn btn-success" type="submit">Add Hero</button>
+          <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </form>
       </div>
     </div>
