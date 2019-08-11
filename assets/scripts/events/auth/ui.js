@@ -38,8 +38,6 @@ const signInSuccessful = responseData => {
 
   // show sign in text
   utils.showItems('#logout-tab')
-  utils.showItems('#getHeroRoster')
-  utils.showItems('#getPlayers')
   utils.showItems('#profile')
   utils.showItems('#settings')
 
@@ -64,8 +62,6 @@ const signOutSuccessful = () => {
   utils.hideItems('#profile')
   utils.hideItems('#settings')
   utils.hideItems('#logout-tab')
-  utils.hideItems('#getHeroRoster')
-  utils.hideItems('#getPlayers')
 
   $('.hero-list').empty()
 
@@ -77,11 +73,26 @@ const signOutFailure = () => {
 
 }
 
+
+const changePasswordSuccessful = () => {
+  $('#changePasswordModal').modal('hide')
+  $('.newpassword').modal('show')
+  $('form').trigger('reset')
+}
+
+const changePasswordFailure = () => {
+  $('#changePasswordModal').modal('hide')
+  $('.nopassword').modal('show')
+  $('form').trigger('reset')
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
   signInSuccessful,
   signInFailure,
   signOutSuccessful,
-  signOutFailure
+  signOutFailure,
+  changePasswordSuccessful,
+  changePasswordFailure
 }

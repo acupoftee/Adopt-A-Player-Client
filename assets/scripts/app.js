@@ -24,6 +24,7 @@ $(() => {
   // AUTH EVENTS
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePassword)
   $('.logOut').on('click', authEvents.onSignOut)
 
   // PROFILE EVENTS
