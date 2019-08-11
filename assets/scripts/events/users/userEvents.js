@@ -188,9 +188,13 @@ const onDeleteHero = event => {
 
 const onOpenOutsideProfile = event => {
   const userId = $(event.target).data('id')
-  api.getOutsideUserProfile(userId)
-    .then(ui.getOutsideProfileSuccess)
-    .catch(console.error)
+  if (userId === store.user.id) {
+    onClickProfileTab()
+  } else {
+    api.getOutsideUserProfile(userId)
+      .then(ui.getOutsideProfileSuccess)
+      .catch(console.error)
+  }
 }
 
 const onOpenModals = event => {
