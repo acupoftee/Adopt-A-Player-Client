@@ -1,8 +1,7 @@
 <div class="modal fade" id="newPlatform" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Platform</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,9 +12,15 @@
         </div>
         <form id="platform">
           <div class="form-group">
-            <input name="user[platform]" type="text" placeholder="New Platform" class="form-control" required>
+            <label>Select Platform</label>
+            <select name="user[platform]" class="form-control" required>
+              <option>PC</option>
+              <option>Xbox One</option>
+              <option>Playstation 4</option>
+            </select>
           </div>
-          <button class="btn btn-primary">Change Platform</button>
+          <button class="btn btn-success">Change Platform</button>
+          <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </form>
       </div>
     </div>

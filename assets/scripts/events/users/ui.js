@@ -52,6 +52,7 @@ const updateProfileView = formData => {
       $('.edit-skill-rating').html(updatedForm[key])
       break
   }
+  $('form').trigger('reset')
 }
 
 module.exports = {
