@@ -16,6 +16,17 @@
 .modal-greeting {
   padding-bottom: 10px;
 }
+// https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete
+input:-webkit-autofill,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 30px #2c3548 inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #c3c8cf !important;
+}
 
 .form-control {
   color: #c3c8cf;
@@ -24,6 +35,12 @@
 
   &:focus {
     background-color: #2c3548;
+    color: #c3c8cf;
+  }
+
+  &:internal-autofill-selected {
+    background-color: #2c3548;
+    color: #c3c8cf;
   }
 }
 
@@ -53,12 +70,12 @@
 .redirect-container {
   text-align: center;
 }
-
 // .form-action {
 //   font-weight: bold;
 //   letter-spacing: 2;
 //   text-transform: uppercase;
 // }
+
 .close {
   color: #c3c8cf;
 
