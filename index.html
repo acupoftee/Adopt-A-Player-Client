@@ -116,7 +116,7 @@
             <form id="sign-up">
               <div class="form-group">
                 <div class="input-group addon">
-                  <span class="input-group-addon" id="basic-addon1">
+                  <span class="input-group-addon">
                     <i class="fa fa-envelope"></i>
                   </span>
                   <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
@@ -124,7 +124,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group addon">
-                  <span class="input-group-addon" id="basic-addon1">
+                  <span class="input-group-addon">
                     <i class="fa fa-key"></i>
                   </span>
                   <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
@@ -132,7 +132,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group addon">
-                  <span class="input-group-addon" id="basic-addon1">
+                  <span class="input-group-addon">
                     <i class="fa fa-check"></i>
                   </span>
                   <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control" required>
@@ -169,18 +169,18 @@
             </div>
             <form id="new-profile">
               <div class="form-group">
-                <input name="user[display_name]" type="text" placeholder="Display Name" class="form-control">
+                <input name="user[display_name]" type="text" placeholder="Display Name" class="form-control" required>
               </div>
               <div class="form-group">
-                <input name="user[summary]" type="textarea" placeholder="Tell us about yourself." class="form-control">
+                <input name="user[summary]" type="text" placeholder="Tell us about yourself." class="form-control" required>
               </div>
               <div class="form-group">
-                <input name="user[avatar_url]" type="text" placeholder="Avatar URL" class="form-control">
+                <input name="user[avatar_url]" type="text" placeholder="Avatar URL" class="form-control" required>
               </div>
               <div class="form-group">
                 <!-- <input name="user[region]" type="text" placeholder="Region" class="form-control"> -->
                 <label for="regionSelectForm">Select Region</label>
-                <select name="user[region]" class="form-control" id="regionSelectForm">
+                <select name="user[region]" class="form-control" id="regionSelectForm" required>
                   <option>Americas</option>
                   <option>Europe</option>
                   <option>Asia</option>
@@ -190,18 +190,25 @@
               <div class="form-group">
                 <!-- <input name="user[platform]" type="text" placeholder="Platform" class="form-control"> -->
                 <label for="platformSelectForm">Select Platform</label>
-                <select name="user[platform]" class="form-control" id="platformSelectForm">
+                <select name="user[platform]" class="form-control" id="platformSelectForm" required>
                   <option>PC</option>
                   <option>Xbox One</option>
                   <option>Playstation 4</option>
                 </select>
               </div>
               <div class="form-group">
-                <input name="user[skill_rating]" type="number" placeholder="Skill Rating" min="1" max="5000" class="form-control">
+                <label for="skillRatingForm">Select Platform</label>
+                <small>This is your rating earned from your curret or most recent competitive season of Overwatch.</small>
+                <input name="user[skill_rating]" id="skillRatingForm" type="number" placeholder="Skill Rating" min="1" max="5000" class="form-control" required>
               </div>
-              <button class="btn btn-primary sign-in-after-sign-up">Create Profile</button>
-              <button class="btn btn-primary" data-dismiss="modal">Setup Later</button>
+              <button class="btn btn-success btn-block sign-in-after-sign-up">Create Profile</button>
             </form>
+            <div class="or-option">
+              <div class="line"></div>
+              <div class="or-text"></div>
+              <div class="line"></div>
+            </div>
+            <button class="btn btn-primary btn-block" data-dismiss="modal">Setup Later</button>
           </div>
         </div>
       </div>
