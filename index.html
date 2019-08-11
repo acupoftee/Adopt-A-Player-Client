@@ -24,7 +24,7 @@
         <a href="#" class="signUp active" id="sign-up-tab">Sign Up</a>
         <!-- <a href="#" class="editProfile hidden" id="updateProfile">Profile</a> -->
         <a href="#" class="goToProfile hidden" id="profile">Profile</a>
-        <a href="#" class="goToSettings hidden" id="settings">Change Password</a>
+        <a href="#" class="changePassword hidden" id="settings">Change Password</a>
         <a href="#" class="logOut hidden" id="logout-tab">Sign Out</a>
       </div>
     </nav>
@@ -33,9 +33,10 @@
   <main>
     <div class="view homepage active">
       <div class="intro">
-        <h4>You're in good hands.</h4>
+        <h4 class="yellow">You're in good hands.</h4>
         <h1>Welcome to Overwatcher</h1>
-        <p>The purpose of this community is to serve as an Overwatch mentoring program for players who wish to improve their gameplay. Whether you’re improving for fun or you aspire to one day reach Grandmaster, Open Division and beyond, this service is for you, gg.</p>
+        <p>The purpose of this community is to serve as an Overwatch mentoring program for players who wish to improve their gameplay. Whether you’re improving for fun or you aspire to one day reach Grandmaster, Open Division and beyond, this service
+          is for you, gg.</p>
         <button class="btn btn-primary homePageSignUp active">Sign Up</button>
         <!-- <button class="btn btn-primary enterMentorSearch hidden">Get Adopted!</button> -->
         <small class="intro-footer">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
@@ -148,6 +149,36 @@
                 <input name="user[skill_rating]" type="number" placeholder="Skill Rating" min="1" max="5000" class="form-control">
               </div>
               <button class="btn btn-primary sign-in-after-sign-up">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CHANGE PASSWORD MODAL -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-greeting">
+              <p class="change-password-error"></p>
+            </div>
+            <form id="change-password">
+              <div class="form-group">
+                <input name="passwords[old]" type="password" placeholder="Old Password" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="passwords[new]" type="password" placeholder="New Password" class="form-control" required>
+              </div>
+              <button class="btn btn-primary">Change Password</button>
+              <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </form>
           </div>
         </div>

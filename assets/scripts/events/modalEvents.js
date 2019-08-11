@@ -17,8 +17,13 @@ const openEditProfile = () => {
   })
 }
 
+const openChangePassword = () => {
+  $('#changePasswordModal').modal('show')
+}
+
 module.exports = {
   openLogin,
   openSignUp,
-  openEditProfile
+  openEditProfile,
+  openChangePassword
 }

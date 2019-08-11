@@ -19,6 +19,7 @@ $(() => {
   $('.homePageSignUp').on('click', modalEvents.openSignUp)
   $('.signUp').on('click', modalEvents.openSignUp)
   $('.editProfile').on('click', modalEvents.openEditProfile)
+  $('.changePassword').on('click', modalEvents.openChangePassword)
 
   // AUTH EVENTS
   $('#sign-up').on('submit', authEvents.onSignUp)
