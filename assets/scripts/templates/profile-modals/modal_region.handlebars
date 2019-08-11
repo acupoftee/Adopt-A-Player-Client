@@ -1,8 +1,7 @@
 <div class="modal fade" id="newRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Region</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,9 +12,16 @@
         </div>
         <form id="region">
           <div class="form-group">
-            <input name="user[region]" type="text" placeholder="New Region" class="form-control" required>
+            <label for="regionSelectForm">Select Region</label>
+            <select name="user[region]" class="form-control" required>
+              <option>Americas</option>
+              <option>Europe</option>
+              <option>Asia</option>
+              <option>OCE</option>
+            </select>
           </div>
-          <button class="btn btn-primary">Change Region</button>
+          <button class="btn btn-success">Change Region</button>
+          <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </form>
       </div>
     </div>
