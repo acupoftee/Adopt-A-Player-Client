@@ -3,10 +3,14 @@
   <h3>Heroes</h3>
   <div class="header-line"></div>
 </div>
+{{#if user.heros}}
   <div class="hero-icon-container">
         {{#each user.heros as |heroes|}}
           <div class="hover-prompt">
-            <img class="hero-profile-icon" data-id="{{ heroes.id}}" src="{{grabImage id}}" />
+            <img class="hero-profile-icon" data-id="{{heroes.id}}" src="{{grabImage id}}" />
           </div>
         {{/each}}
   </div>
+  {{else}}
+      <p>This user doesn't have any heroes listed yet.</p>
+  {{/if}}

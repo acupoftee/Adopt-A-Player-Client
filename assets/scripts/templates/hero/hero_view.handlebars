@@ -4,6 +4,8 @@
   <div class="header-line"></div>
 </div>
 <p class="editable add-hero-option">Add New Hero</p>
+
+{{#if user.heros}}
   <div class="hero-icon-container">
         {{#each user.heros as |heroes|}}
           <div class="hover-prompt">
@@ -11,3 +13,4 @@
           </div>
         {{/each}}
   </div>
+{{/if}}
