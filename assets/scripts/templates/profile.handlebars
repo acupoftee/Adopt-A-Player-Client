@@ -11,7 +11,7 @@
     {{> profile-modals/modal_displayname}}
 
     {{#if user.summary}}
-      <p class="editable edit-summary">{{user.summary}}</p>
+      <p class="editable edit-summary summary">{{user.summary}}</p>
       <!-- <p class="in-profile-edit">Edit</p> -->
     {{else}}
       <p class="in-profile-edit edit-summary">Add Summary</p>
@@ -24,9 +24,7 @@
 
     {{> hero/hero_view}}
     <div class="video-view">
-  {{#if user.videos}}
-    </br>
-    <h2>Videos:</h2>
+    {{#if user.videos}}
     <p class="editable add-video-option">Add New Video</p>
     {{#each user.videos as |video|}}
     </br>

@@ -9,22 +9,27 @@
     {{/if}}
 
     {{#if user.summary}}
-      <p>{{user.summary}}</p>
+      <p class="summary">{{user.summary}}</p>
     {{/if}}
 
   </div>
   {{> bar-contents/another_bar}}
 
     {{> hero/another_hero_view}}
-    <div class="video-view">
+
+    <div class="line-container">
+      <div class="header-line"></div>
+      <h3>Videos</h3>
+      <div class="header-line"></div>
+    </div>
   {{#if user.videos}}
-    </br>
-    <h2>Videos:</h2>
+      <div class="video-view">
     {{#each user.videos as |video|}}
-    </br>
+    <div class="video-container">
     <h5 data-id="{{video.id}}">{{video.title}}</h5>
     <div class="video-wrapper">
     <iframe width="560" height="340" data-id="{{video.id}}" src="{{grabVideoUrl video.url}}"></iframe>
+  </div>
   </div>
     </br>
     {{/each}}
