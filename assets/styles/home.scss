@@ -13,6 +13,18 @@ body {
   color: $paragraph-color;
 }
 
+.intro {
+  position: relative;
+  top: 80px;
+  display: block;
+}
+
+.hero-listings {
+  position: relative;
+  top: 110px;
+  display: block;
+}
+
 // .homePageSignUp {
 //   background-color: $button;
 // }

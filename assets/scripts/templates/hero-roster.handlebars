@@ -1,17 +1,17 @@
 <div class="container">
-   {{#groupEach 5 heros}}
-     <div class="row">
-       {{#each this}}
-       <section class="hero-card" data-id="{{id}}">
-         <img class="hero-image" data-id="{{id}}" src={{grabImage id}}>
-         <h5 data-id="{{id}}">
-           {{name}}
-         </h5>
-         <p>
-           {{hero_class}}
-         </p>
-       </section>
-       {{/each}}
-     </div>
-   {{/groupEach}}
- </div>
+  {{#groupEach 5 heros}}
+    <div class="row">
+      {{#each this}}
+        <section class="hero-card" data-id="{{id}}">
+          <img class="hero-image" data-id="{{id}}" src={{grabImage id}}>
+          <h5 data-id="{{id}}">
+            {{name}}
+          </h5>
+          <p>
+            {{hero_class}}
+          </p>
+        </section>
+      {{/each}}
+    </div>
+  {{/groupEach}}
+</div>

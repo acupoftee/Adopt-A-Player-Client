@@ -47,7 +47,19 @@
     transform: scale(1.05);
   }
 
+  h5 {
+    font-size: 2vw;
+    margin-top: 2%;
+    line-height: 1;
+  }
+
   img {
     border-radius: 100%;
+  }
+
+  p {
+    text-transform: uppercase;
+    font-size: 1vw;
+    color: $button;
   }
 }

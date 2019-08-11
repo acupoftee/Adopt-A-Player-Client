@@ -1,7 +1,14 @@
 $button: #f5b903;
 
+// .nav-wrapper {
+//   z-index: 99;
+//   position: fixed;
+//   width: 100%;
+//   display: block;
+// }
 .auth-options {
   display: flex;
+  background-color: transparent;
 }
 
 .nav-item {
@@ -27,9 +34,6 @@ $button: #f5b903;
   }
 }
 
-.collapse {
-  background-color: black;
-}
 // .nav-item {
 //   &:nth-child(1) {
 //     flex-grow

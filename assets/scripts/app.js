@@ -36,8 +36,12 @@ $(() => {
   // HANDLEBAR EVENTS
   heroEvents.addHandlers()
   userEvents.addHandlers()
-
-  $(window).on('scroll', () => {
-    console.log('scroololololo lololo lololo, hahahahaha')
-  })
+  //
+  // $(window).on('scroll', event => {
+  //   if ($('body').scrollTop < 1000) {
+  //     $('.auth-options').css('background-color', 'transparent')
+  //   } else {
+  //     $('.auth-options').css('background-color', '#2b2b2b')
+  //   }
+  // })
 })
