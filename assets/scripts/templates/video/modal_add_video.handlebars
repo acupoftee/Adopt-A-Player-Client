@@ -2,15 +2,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Video</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="modal-greeting">
-          <h5>Add a new video.</h5>
-          <p class="add-video-error hidden">Make sure to fill out all fields!</p>
+          <h5>Add New Video</h5>
+          <p class="add-video-error"></p>
         </div>
         <form id="add-video">
           <div class="form-group">
@@ -19,7 +18,8 @@
           <div class="form-group">
             <input name="video[url]" type=text placeholder="Youtube URL" class="form-control" required/>
           </div>
-          <button class="btn btn-primary">Add Video</button>
+          <button class="btn btn-success">Add Video</button>
+          <button class="btn btn-secondary">Cancel</button>
         </form>
       </div>
     </div>

@@ -6,7 +6,7 @@
 {{#if user.heros}}
   <div class="hero-icon-container">
         {{#each user.heros as |heroes|}}
-          <div class="hover-prompt">
+          <div>
             <img class="hero-profile-icon" data-id="{{heroes.id}}" src="{{grabImage id}}" />
           </div>
         {{/each}}

@@ -38,7 +38,10 @@
       <p class="editable add-video-option">Add New Video</p>
       {{#each user.videos as |video|}}
         </br>
+        <div class="edit-container">
         <h5 class="editable edit-video" data-id="{{video.id}}">{{video.title}}</h5>
+        <p class="editable edit-video pencil" data-id="{{video.id}}"> ✎</p>
+      </div>
         <div class="video-wrapper">
           <iframe width="560" height="340" data-id="{{video.id}}" src="{{grabVideoUrl video.url}}"></iframe>
         </div>
@@ -49,6 +52,7 @@
     {{/if}}
   </div>
 </div>
+
 {{> profile-modals/modal_displayname}}
 {{> profile-modals/modal_summary}}
 {{> profile-modals/modal_platform}}

@@ -95,17 +95,24 @@ const onUpdateVideo = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  const video = utils.removeBlanks(formData.video)
-  const reqData = {
-    video
+  if (formData.video.url !== '' && !utils.validateUrl(formData.video.url)) {
+    $('.video-error').html('Video URL Invalid')
+    setTimeout(() => {
+      $('.video-error').empty()
+    }, 3000)
+  } else {
+    const video = utils.removeBlanks(formData.video)
+    const reqData = {
+      video
+    }
+    api.updateVideo(reqData)
+      .then(() => onClickProfileTab(event))
+      .then(() => {
+        $('#editVideModal').modal('hide')
+        utils.removeModalBackdrop()
+      })
+      .catch(console.error)
   }
-  api.updateVideo(reqData)
-    .then(() => onClickProfileTab(event))
-    .then(() => {
-      $('#editVideModal').modal('hide')
-      utils.removeModalBackdrop()
-    })
-    .catch(console.error)
 }
 
 const onAddVideo = event => {
@@ -113,13 +120,20 @@ const onAddVideo = event => {
   const form = event.target
   const formData = getFormFields(form)
   formData.video.user_id = store.user.id
-  api.addVideo(formData)
-    .then(() => onClickProfileTab(event))
-    .then(() => {
-      $('#addVideModal').modal('hide')
-      utils.removeModalBackdrop()
-    })
-    .catch(console.error)
+  if (!utils.validateUrl(formData.video.url)) {
+    $('.add-video-error').html('Video URL Invalid')
+    setTimeout(() => {
+      $('.add-video-error').empty()
+    }, 3000)
+  } else {
+    api.addVideo(formData)
+      .then(() => onClickProfileTab(event))
+      .then(() => {
+        $('#addVideModal').modal('hide')
+        utils.removeModalBackdrop()
+      })
+      .catch(console.error)
+  }
 }
 
 const onAddHero = event => {
