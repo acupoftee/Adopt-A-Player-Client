@@ -8,6 +8,7 @@ const onSignUp = event => {
   const formData = getFormFields(form)
   api.signUp(formData)
     .then(ui.signUpSuccessful)
+    // .then(() => )
     .catch(ui.signUpFailure)
   // onSignInAfterSignUp(formData)
 }
@@ -38,14 +39,14 @@ const onChangePassword = event => {
 //     .catch(ui.signInFailure)
 // }
 
-// const onOnBoarding = event => {
-//   event.preventDefault()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   api.buildProfile(formData)
-//     .then(console.log)
-//     .catch(console.error)
-// }
+const onProfileSetup = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.buildProfile(formData)
+    .then(console.log)
+    .catch(console.error)
+}
 
 const onSignOut = event => {
   event.preventDefault()

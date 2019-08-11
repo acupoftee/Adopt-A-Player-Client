@@ -111,7 +111,6 @@ const onAddHero = event => {
   }
 
   api.addUserHero(userHero)
-    .then(console.log)
     .then(() => {
       onClickProfileTab(event)
     })
@@ -125,9 +124,7 @@ const onAddHero = event => {
 const onDeleteVideo = event => {
   event.preventDefault()
   const videoId = store.videoId
-  console.log(videoId)
   api.deleteVideo(videoId)
-    .then(console.log)
     .then(() => onClickProfileTab(event))
     .then(() => {
       $('#deleteVideoPrompt').modal('hide')

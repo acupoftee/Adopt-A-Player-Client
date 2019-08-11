@@ -11,7 +11,6 @@ const onGetHeroRoster = event => {
 const onGetUsersByHero = event => {
   event.preventDefault()
   const heroId = $(event.target).data()
-  console.log(heroId)
   api.getUsersByHero(heroId.id)
     .then(ui.getUsersByHeroSuccess)
     .catch(console.error)

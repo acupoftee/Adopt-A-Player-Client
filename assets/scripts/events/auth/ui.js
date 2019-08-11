@@ -73,7 +73,6 @@ const signOutFailure = () => {
 
 }
 
-
 const changePasswordSuccessful = () => {
   $('#changePasswordModal').modal('hide')
   $('.newpassword').modal('show')

@@ -2,7 +2,6 @@
 const groupEach = function (every, context, options) {
   let out = ''
   let subcontext = []
-  console.log(context)
   if (context && context.length > 0) {
     for (let i = 0; i < context.length; i++) {
       if (i > 0 && i % every === 0) {

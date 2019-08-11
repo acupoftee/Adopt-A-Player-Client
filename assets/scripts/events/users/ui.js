@@ -35,7 +35,6 @@ const updateHeroListings = data => {
 const updateProfileView = formData => {
   const key = Object.keys(formData.user)[0]
   const updatedForm = formData.user
-  console.log('key', key)
   switch (key) {
     case 'display_name':
       $('.edit-display-name').html(updatedForm[key])

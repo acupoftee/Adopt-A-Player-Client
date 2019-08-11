@@ -80,23 +80,29 @@
                   <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
                 </div>
               </div>
-              <button class="btn btn-success btn-block">Sign In</button>
+              <button class="btn btn-success btn-block form-action">Sign In</button>
             </form>
+            <div class="or-option">
+              <div class="line"></div>
+            </div>
+            <div class="redirect-container">
+              <p class="modal-redirect">No account yet? <a href="#" class="signUp">Sign up</a>!</p>
+            </div>
           </div>
-          <div class="modal-footer">
+          <!-- <div class="modal-footer">
             <div class="WordDividerLine-container"></div>
             <small class="modal-redirect">No account yet? <a href="#" class="signUp">Sign up</a>!</small>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
 
     <!-- SIGN UP MODAL -->
     <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5> -->
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -109,19 +115,37 @@
             </div>
             <form id="sign-up">
               <div class="form-group">
-                <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
+                <div class="input-group addon">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                  <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
+                </div>
               </div>
               <div class="form-group">
-                <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
+                <div class="input-group addon">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-key"></i>
+                  </span>
+                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
+                </div>
               </div>
               <div class="form-group">
-                <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control" required>
+                <div class="input-group addon">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-check"></i>
+                  </span>
+                  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control" required>
+                </div>
               </div>
-              <button class="btn btn-primary sign-in-after-sign-up">Sign Up</button>
+              <button class="btn btn-success btn-block sign-in-after-sign-up form-action">Sign Up</button>
             </form>
-          </div>
-          <div class="modal-footer">
-            <small class="modal-redirect">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
+            <div class="or-option">
+              <div class="line"></div>
+            </div>
+            <div class="redirect-container">
+              <p class="modal-redirect">Already a user? <a href="#" class="logIn">Sign in</a>!</p>
+            </div>
           </div>
         </div>
       </div>
@@ -133,14 +157,14 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Profile Setup</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="setup-greeting">
-              <!-- <p>You've come to the right place. Let's get you started by</br> adding your Overwatch info.</p> -->
+              <p>You've come to the right place. Let's get you started by</br> adding your information.</p>
               <!-- <p class="sign-up-error hidden">Can't sign you up. 😞</p> -->
             </div>
             <form id="new-profile">
@@ -148,21 +172,35 @@
                 <input name="user[display_name]" type="text" placeholder="Display Name" class="form-control">
               </div>
               <div class="form-group">
-                <input name="user[summary]" type="text" placeholder="Tell us about yourself." class="form-control">
+                <input name="user[summary]" type="textarea" placeholder="Tell us about yourself." class="form-control">
               </div>
               <div class="form-group">
                 <input name="user[avatar_url]" type="text" placeholder="Avatar URL" class="form-control">
               </div>
               <div class="form-group">
-                <input name="user[region]" type="text" placeholder="Region" class="form-control">
+                <!-- <input name="user[region]" type="text" placeholder="Region" class="form-control"> -->
+                <label for="regionSelectForm">Select Region</label>
+                <select name="user[region]" class="form-control" id="regionSelectForm">
+                  <option>Americas</option>
+                  <option>Europe</option>
+                  <option>Asia</option>
+                  <option>OCE</option>
+                </select>
               </div>
               <div class="form-group">
-                <input name="user[platform]" type="text" placeholder="Platform" class="form-control">
+                <!-- <input name="user[platform]" type="text" placeholder="Platform" class="form-control"> -->
+                <label for="platformSelectForm">Select Platform</label>
+                <select name="user[platform]" class="form-control" id="platformSelectForm">
+                  <option>PC</option>
+                  <option>Xbox One</option>
+                  <option>Playstation 4</option>
+                </select>
               </div>
               <div class="form-group">
                 <input name="user[skill_rating]" type="number" placeholder="Skill Rating" min="1" max="5000" class="form-control">
               </div>
-              <button class="btn btn-primary sign-in-after-sign-up">Sign Up</button>
+              <button class="btn btn-primary sign-in-after-sign-up">Create Profile</button>
+              <button class="btn btn-primary" data-dismiss="modal">Setup Later</button>
             </form>
           </div>
         </div>
