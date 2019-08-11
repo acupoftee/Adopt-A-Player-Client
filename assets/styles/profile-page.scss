@@ -45,6 +45,22 @@ iframe {
   }
 }
 
+.hover-prompt {
+  display: flex;
+  flex-direction: row;
+
+  &:hover {
+    cursor: pointer;
+    .hero-profile-icon {
+      border-color: #dc3545;
+    }
+
+    .hero-profile-icon-close {
+      color: #dc3545;
+    }
+  }
+}
+
 .profile-header {
   background-color: #2d3547;
   border-top-left-radius: 30px;
@@ -78,11 +94,11 @@ iframe {
   width: 5vw;
   padding: 0;
   margin: auto 1%;
+}
 
-  &:hover {
-    cursor: pointer;
-    border: #f5b903 4px solid;
-  }
+.hero-profile-icon-close {
+  cursor: default;
+  color: #f5b903;
 }
 
 .details {
@@ -103,7 +119,7 @@ iframe {
     padding-top: 1rem;
 
     h5 {
-      font-size: .7vw;
+      font-size: 0.7vw;
       font-weight: bold;
       text-transform: uppercase;
       color: lighten(#f5b903, 5%);
@@ -161,6 +177,7 @@ iframe {
     font-size: 1.5vw;
   }
 }
+
 .line-container {
   display: flex;
   flex-direction: row;
@@ -179,4 +196,9 @@ iframe {
   h3 {
     padding: 0 12px;
   }
+}
+
+.edit-container {
+  display: flex;
+  justify-content: center;
 }

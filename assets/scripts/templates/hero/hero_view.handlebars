@@ -8,8 +8,9 @@
 {{#if user.heros}}
   <div class="hero-icon-container">
         {{#each user.heros as |heroes|}}
-          <div class="hover-prompt">
+          <div class="hover-prompt" data-id="{{getJoinId heroes.id arr=thing}}">
             <img class="hero-profile-icon" data-id="{{getJoinId heroes.id arr=thing}}" src="{{grabImage id}}" />
+            <small class="hero-profile-icon-close" data-id="{{getJoinId heroes.id arr=thing}}">ⅹ</small>
           </div>
         {{/each}}
   </div>

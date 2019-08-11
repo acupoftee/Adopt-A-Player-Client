@@ -38,6 +38,7 @@ const updateProfileView = formData => {
   switch (key) {
     case 'display_name':
       $('.edit-display-name').html(updatedForm[key])
+      $('.pencil').html('✎')
       break
     case 'summary':
       $('.edit-summary').html(updatedForm[key])

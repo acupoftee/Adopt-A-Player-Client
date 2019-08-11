@@ -2,16 +2,16 @@
   <div class="detail">
     <h5>Status</h5>
     {{#if user.is_mentor}}
-      <p class="editable edit-mentor">Mentor</p>
+      <p class="editable edit-mentor">Mentor <small>✎</small></p>
     {{else}}
-      <p class="editable edit-mentor">Mentee</p>
+      <p class="editable edit-mentor">Mentee <small>✎</small></p>
     {{/if}}
   </div>
   <!-- <p class="in-profile-edit">Edit</p> -->
   <div class="detail">
     <h5>Platform</h5>
     {{#if user.platform}}
-      <p class="editable"><span class="edit-platform">{{user.platform}}</span></p>
+      <p class="editable"><span class="edit-platform">{{user.platform}} <small>✎</small></span></p>
       <!-- <p class="in-profile-edit">Edit</p> -->
     {{else}}
       <p class="in-profile-edit edit-platform">Add Platform</p>
@@ -22,7 +22,7 @@
   <div class="detail">
     <h5>Region</h5>
      {{#if user.region}}
-      <p class="editable"><span class="edit-region">{{user.region}}</span></p>
+      <p class="editable"><span class="edit-region">{{user.region}} <small>✎</small></span></p>
       <!-- <p class="in-profile-edit">Edit</p> -->
     {{else}}
       <p class="in-profile-edit edit-region">Add Region</p>
@@ -34,7 +34,7 @@
   <div class="detail">
     <h5>Skill Rating</h5>
     {{#if user.skill_rating}}
-      <p class="editable"><span class="edit-skill-rating">{{user.skill_rating}}</span></p>
+      <p class="editable"><span class="edit-skill-rating">{{user.skill_rating}} <small>✎</small></span></p>
       <!-- <p class="in-profile-edit">Edit</p> -->
     {{else}}
       <p class="in-profile-edit edit-skill-rating">Add Skill Rating</p>
