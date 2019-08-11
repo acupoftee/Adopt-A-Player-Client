@@ -1,27 +1,37 @@
 $button: #f5b903;
 
-nav {
-  // background-color: black;
+.auth-options {
+  display: flex;
+}
+
+.nav-item {
+  color: #c3c8cf; //#fff;
   margin-bottom: 1.5em;
-  // top: 0;
-  // width: 100%;
-  a {
-    color: #fff;
-    // letter-spacing: 4px;
-    &:hover {
-      color: $button;
-      text-decoration: none;
-      transition: 0.5s ease;
+
+  &:hover {
+    color: $button;
+    text-decoration: none;
+    transition: 0.5s ease;
+  }
+
+  &:nth-child(1) {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: $button;
+    flex-grow: 5;
+  }
+  @for $i from 2 to 8 {
+    &:nth-child(#{i}) {
+      flex-grow: 0;
     }
   }
 }
 
-.scroll-nav {
-  @extend nav;
-  background-color: #333;
-  position: fixed;
-  top: -100px;
-  width: 100%;
-  display: block;
-  transition: top 0.3s;
+.collapse {
+  background-color: black;
 }
+// .nav-item {
+//   &:nth-child(1) {
+//     flex-grow
+//   }
+// }

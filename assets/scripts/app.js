@@ -36,4 +36,8 @@ $(() => {
   // HANDLEBAR EVENTS
   heroEvents.addHandlers()
   userEvents.addHandlers()
+
+  $(window).on('scroll', () => {
+    console.log('scroololololo lololo lololo, hahahahaha')
+  })
 })
