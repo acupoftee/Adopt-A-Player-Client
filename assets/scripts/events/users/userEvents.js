@@ -5,6 +5,7 @@ const ui = require('./ui')
 const store = require('../../store')
 const heroIds = require('../heroes/getHeroIds')
 const utils = require('../../util/utils')
+const avatars = require('./randomAvatar')
 
 const openVideoOptions = event => {
   $('#editVideoModal').modal('show')
@@ -39,6 +40,17 @@ const onClickProfileTab = event => {
   api.getUserProfile()
     .then(res => {
       store.profileData.user = res
+      if (!store.profileData.user.user.avatar_url) {
+        const avatar = avatars.getAvatar()
+        const data = {
+          user: {
+            avatar_url: avatar
+          }
+        }
+        store.profileData.user.user.avatar_url = avatar
+        console.log(store.profileData.user)
+        onUpdateAvatar(data)
+      }
     })
     .catch(console.error)
 
@@ -63,6 +75,12 @@ const onUpdateProfile = event => {
       $('.modal').modal('hide')
       ui.updateProfileView(formData)
     })
+    .catch(console.error)
+}
+
+const onUpdateAvatar = data => {
+  api.updateProfile(data)
+    .then(true)
     .catch(console.error)
 }
 
