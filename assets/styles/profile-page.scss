@@ -1,8 +1,9 @@
-$profile-background: #2d3547;//#414345;
+$profile-background: #2d3547; //#414345;
 
 iframe {
   border-color: $profile-background;
 }
+
 .profile-container {
   background-color: $profile-background;
   border-radius: 30px;
@@ -20,34 +21,22 @@ iframe {
     font-size: 5rem;
   }
 
-  & > * {
-    width: 100%;
-    height: 100%;
-  }
+  // & > div, p, h1, h2, h3, h4, h5 {
+  //   height: 100%;
+  //   width: 100%;
+  // }
 }
 
 .editable,
 .in-profile-edit {
-
   &:hover {
-    color: #FF9933;
+    color: #f5b903;
     cursor: pointer;
   }
 }
 
 .profile-header {
-  // background: linear-gradient(to bottom, #ff4b1f, #ff9068);
-  // background: #FF9933;
-  // background: linear-gradient(to bottom, #232526, #414345);
-  // background: linear-gradient(to bottom, #141e30, #243b55);
-  // background: linear-gradient(to top, #333, #000428);
-  // background: linear-gradient(to bottom, #16222a, #3a6073);
-// background: linear-gradient(to top, #2b4162, #12100e 94%);
-
-  // background: #12100e;
-//   background-color: #000000;
-// background-image: linear-gradient(to bottom, #000000, #414141);
-background-color: #2d3547;
+  background-color: #2d3547;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   color: white;
@@ -58,7 +47,7 @@ background-color: #2d3547;
 .add-hero-option,
 .add-video-option {
   &:hover {
-    color: #FF9933;
+    color: #f5b903;
     cursor: pointer;
   }
 }
@@ -93,7 +82,7 @@ background-color: #2d3547;
 
   &:hover {
     cursor: pointer;
-    border: #FF9933 4px solid;
+    border: #f5b903 4px solid;
     // .played-hero-tooltip {
     //   position: relative;
     //   visibility: visible;
@@ -102,7 +91,7 @@ background-color: #2d3547;
 }
 
 .details {
-  background-color: #202634;//#222;
+  background-color: #202634; //#222;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -122,6 +111,7 @@ background-color: #2d3547;
       font-size: 1.8em;
       transform: uppercase;
     }
+
     p {
       font-size: 1em;
     }
@@ -149,16 +139,17 @@ background-color: #2d3547;
 }
 
 .video-wrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
 
   iframe {
-  	position: absolute;
-  	top: 0;
-  	left: 0;
-  	width: 100%;
-  	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
