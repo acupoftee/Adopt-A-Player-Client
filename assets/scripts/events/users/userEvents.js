@@ -28,6 +28,7 @@ const onGetUsers = event => {
   event.preventDefault()
   api.getUsers()
     .then(ui.getProfilesSuccess)
+    .then(() => utils.hideItems('.homepage'))
     .catch(console.error)
 }
 
