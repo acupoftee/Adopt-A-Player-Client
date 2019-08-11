@@ -39,14 +39,14 @@ const onChangePassword = event => {
 //     .catch(ui.signInFailure)
 // }
 
-const onProfileSetup = event => {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.buildProfile(formData)
-    .then(console.log)
-    .catch(console.error)
-}
+// const onProfileSetup = event => {
+//   event.preventDefault()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   api.buildProfile(formData)
+//     .then(console.log)
+//     .catch(console.error)
+// }
 
 const onSignOut = event => {
   event.preventDefault()

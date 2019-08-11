@@ -12,6 +12,11 @@ const openVideoOptions = event => {
   $('#videoOptions').modal('hide')
 }
 
+const onClickLogo = event => {
+  $('.hero-list').empty()
+  utils.showItems('.homepage')
+}
+
 const openVideoDeleteOptions = event => {
   $('#deleteVideoPrompt').modal('show')
   $('#videoOptions').modal('hide')
@@ -64,6 +69,7 @@ const onClickProfileTab = event => {
     .then(() => {
       ui.getProfileSuccess(store.profileData)
     })
+    .then(() => utils.hideItems('.homepage'))
     .catch(console.error)
 }
 
@@ -221,5 +227,6 @@ const addHandlers = () => {
 module.exports = {
   addHandlers,
   onClickProfileTab,
-  onUpdateProfile
+  onUpdateProfile,
+  onClickLogo
 }

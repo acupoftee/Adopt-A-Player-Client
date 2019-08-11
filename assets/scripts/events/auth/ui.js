@@ -57,6 +57,7 @@ const signOutSuccessful = () => {
   // show sign up text
   utils.showItems('#login-tab')
   utils.showItems('#sign-up-tab')
+  utils.showItems('.homepage')
 
   // Hide options for signed in users
   utils.hideItems('#profile')

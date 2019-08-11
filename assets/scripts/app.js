@@ -31,6 +31,9 @@ $(() => {
   // $('#new-profile').on('submit', userEvents.onEditProfile)
   $('.goToProfile').on('click', userEvents.onClickProfileTab)
 
+  // HOMEPAGE EVENT
+  $('.nav-logo').on('click', userEvents.onClickLogo)
+
   // https://stackoverflow.com/questions/9827095/is-it-possible-to-use-jquery-on-and-hover
 
   // HANDLEBAR EVENTS

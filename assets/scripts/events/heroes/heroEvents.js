@@ -1,10 +1,12 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
+const utils = require('../../util/utils')
 
 const onGetHeroRoster = event => {
   event.preventDefault()
   api.getHeroes()
     .then(ui.getHeroRosterSuccess)
+    .then(() => utils.hideItems('.homepage'))
     .catch(console.error)
 }
 
