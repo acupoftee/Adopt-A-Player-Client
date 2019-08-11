@@ -19,6 +19,18 @@
   p {
     margin-bottom: 0;
   }
+  .status {
+      font-size: 1vw;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: lighten(#f5b903, 5%);
+      margin-bottom: 1%;
+  }
+
+  .card-platform {
+    color: darken(#c3c8cf, 5%);
+    line-height: .8;
+  }
 
   &:hover {
     transform: scale(1.05);

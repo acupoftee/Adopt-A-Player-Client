@@ -13,8 +13,13 @@
               {{else}}
                 <h3 data-id="{{id}}">{{email}}</h3>
               {{/if}}
+              {{#if is_mentor}}
+                <p class="status">Mentor</p>
+              {{else}}
+                <p class="status">Mentee</p>
+              {{/if}}
             {{#if platform}}
-              <h6 data-id="{{id}}">
+              <h6 class="card-platform" data-id="{{id}}">
                 Platform: {{platform}}
               </h6>
             {{/if}}

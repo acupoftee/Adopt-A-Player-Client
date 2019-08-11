@@ -1,4 +1,4 @@
-<div class="profile-container">
+<div class="profile-container" data-id="{{user.id}}">
   <div class="profile-header">
     <img class="profile-pic-main" src="{{user.avatar_url}}"/>
     {{#if user.display_name}}
@@ -28,7 +28,7 @@
     <div class="video-container">
     <h5 data-id="{{video.id}}">{{video.title}}</h5>
     <div class="video-wrapper">
-    <iframe width="560" height="340" data-id="{{video.id}}" src="{{video.url}}"></iframe>
+    <iframe width="560" height="340" data-id="{{video.id}}" src="{{grabVideoUrl video.url}}"></iframe>
   </div>
   </div>
     </br>

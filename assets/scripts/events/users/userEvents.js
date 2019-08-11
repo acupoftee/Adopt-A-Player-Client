@@ -188,7 +188,7 @@ const onDeleteHero = event => {
 
 const onOpenOutsideProfile = event => {
   const userId = $(event.target).data('id')
-  if (userId === store.user.id) {
+  if (store.user && userId === store.user.id) {
     onClickProfileTab()
   } else {
     api.getOutsideUserProfile(userId)
