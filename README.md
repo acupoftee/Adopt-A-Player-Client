@@ -7,6 +7,8 @@ Overwatcher.gg (Formerly known as Adopt A Player) is a mentoring platform for pl
 
 Check out the repo for Overwatcher's [Ruby on Rails API](https://github.com/acupoftee/Adopt-A-Player)!
 
+You can view the deployed backend on [Heroku](https://adopt-a-player.herokuapp.com)
+
 <p align="center">
 <img src="readme_assets/hero-view.png" height="306">
 </p>
