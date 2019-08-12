@@ -3,6 +3,16 @@
   text-align: center;
 }
 
+.hero-heading {
+  display: block;
+  text-align: center;
+  color: white;
+
+  span {
+    color: $button;
+  }
+}
+
 .hero-info {
   display: flex;
   justify-content: space-between;

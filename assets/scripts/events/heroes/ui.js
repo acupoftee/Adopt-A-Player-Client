@@ -7,9 +7,6 @@ const showHeroUserTemplate = require('../../templates/profile-listing.handlebars
 
 const getHeroRosterSuccess = data => {
   const showHeroRosterHtml = showHeroRosterTemplate({heros: data.heros})
-
-  switch($('.hero-class').)
-
   $('.hero-list').html(showHeroRosterHtml)
 }
 
@@ -22,7 +19,8 @@ const getUsersByHeroSuccess = data => {
     $('.hero-list').html('No one has played this hero yet!').css('color', 'white')
   } else {
     const showUsersByHeroHtml = showHeroUserTemplate({users: data.hero.users})
-    $('.hero-list').html(showUsersByHeroHtml)
+    const heroHeading = `<h4 class="hero-heading">Showing Results for <span>${data.hero.name}</span></h4>`
+    $('.hero-list').html(heroHeading + showUsersByHeroHtml)
   }
 }
 module.exports = {

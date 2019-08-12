@@ -20,7 +20,7 @@ const onGetUsersByHero = event => {
 const addHandlers = () => {
   $('#getHeroRoster').on('click', onGetHeroRoster)
 
-  $('body').on('click', '.hero-image', onGetUsersByHero)
+  $('body').on('click', '.hero-card', onGetUsersByHero)
 }
 
 module.exports = {
