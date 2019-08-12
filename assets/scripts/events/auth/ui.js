@@ -2,10 +2,9 @@ const store = require('../../store')
 const utils = require('../../util/utils')
 
 const signUpSuccessful = () => {
-  // hide error message if it's active on success
-  if ($('.sign-up-error').hasClass('active')) {
-    utils.hideItems('.sign-up-error')
-  }
+  $('.sign-up-error').empty()
+  $('.sign-in-error').empty()
+
   // close sign up modal
   $('#signUpModal').modal('hide')
 
@@ -18,14 +17,14 @@ const signUpFailure = () => {
   $('form').trigger('reset')
 
   // show error message
-  utils.showItems('.sign-up-error')
+  $('.sign-up-error').html('Can\'t sign you up. 😞')
 }
 
 const signInSuccessful = responseData => {
   // hide error message if active on success
-  if ($('.sign-in-error').hasClass('active')) {
-    utils.hideItems('.sign-in-error')
-  }
+  $('.sign-in-error').empty()
+  $('.sign-up-error').empty()
+
   // update the user's session info for later
   store.user = responseData.user
 
@@ -49,8 +48,11 @@ const signInSuccessful = responseData => {
 }
 
 const signInFailure = () => {
+  // clear form
   $('form').trigger('reset')
-  utils.showItems('.sign-in-error')
+
+  // show error message
+  $('.sign-in-error').html('Can\'t sign you in. 😞')
 }
 
 const signOutSuccessful = () => {
@@ -71,7 +73,7 @@ const signOutSuccessful = () => {
 }
 
 const signOutFailure = () => {
-
+  utils.errorModal('Unable to sign you out at this time. Try again later!')
 }
 
 const changePasswordSuccessful = () => {

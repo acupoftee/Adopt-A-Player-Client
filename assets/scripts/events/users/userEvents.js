@@ -6,6 +6,7 @@ const store = require('../../store')
 const heroIds = require('../heroes/getHeroIds')
 const utils = require('../../util/utils')
 const avatars = require('./randomAvatar')
+const mentorStatus = require('./getStatus')
 
 const openVideoOptions = event => {
   $('#editVideoModal').modal('show')
@@ -34,7 +35,7 @@ const onGetUsers = event => {
   api.getUsers()
     .then(ui.getProfilesSuccess)
     .then(() => utils.hideItems('.homepage'))
-    .catch(console.error)
+    .catch(ui.getProfilesFailure)
 }
 
 const onClickProfileTab = event => {
@@ -54,41 +55,50 @@ const onClickProfileTab = event => {
           }
         }
         store.profileData.user.user.avatar_url = avatar
-        console.log(store.profileData.user)
         onUpdateAvatar(data)
       }
     })
-    .catch(console.error)
-
-  // 1. get all the join table data
-  // 2. share the profile and join table info to handlebars
-  api.getUserHeroJoins()
-    .then(res => {
-      store.profileData.joins = res
-    })
     .then(() => {
-      ui.getProfileSuccess(store.profileData)
+      // 1. get all the join table data
+      // 2. share the profile and join table info to handlebars
+      api.getUserHeroJoins()
+        .then(res => {
+          store.profileData.joins = res
+        })
+        .then(() => {
+          ui.getProfileSuccess(store.profileData)
+        })
+        .then(() => utils.hideItems('.homepage'))
     })
-    .then(() => utils.hideItems('.homepage'))
-    .catch(console.error)
+    .catch(ui.getProfileFailure)
 }
 
 const onUpdateProfile = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  api.updateProfile(formData)
-    .then(() => {
-      $('.modal').modal('hide')
-      ui.updateProfileView(formData)
-    })
-    .catch(console.error)
+  if (formData.user.is_mentor) {
+    const key = formData.user.is_mentor
+    formData.user.is_mentor = mentorStatus[key]
+  } else if (formData.user.avatar_url && !utils.validateImageUrl(formData.user.avatar_url)) {
+    $('.avatar-error').html('Avatar URL Invalid. Please use a .jpeg, .jpg, or .png file!')
+    setTimeout(() => {
+      $('.avatar-error').empty()
+    }, 3000)
+  } else {
+    api.updateProfile(formData)
+      .then(() => {
+        $('.modal').modal('hide')
+        ui.updateProfileView(formData)
+      })
+      .catch(() => utils.errorModal('Can\'t create avatar at this time.'))
+  }
 }
 
 const onUpdateAvatar = data => {
   api.updateProfile(data)
     .then(true)
-    .catch(console.error)
+    .catch(() => utils.errorModal('Can\'t create avatar at this time.'))
 }
 
 const onUpdateVideo = event => {
@@ -111,7 +121,7 @@ const onUpdateVideo = event => {
         $('#editVideModal').modal('hide')
         utils.removeModalBackdrop()
       })
-      .catch(console.error)
+      .catch(() => utils.errorModal('Can\'t update video at this time.'))
   }
 }
 
@@ -132,7 +142,7 @@ const onAddVideo = event => {
         $('#addVideModal').modal('hide')
         utils.removeModalBackdrop()
       })
-      .catch(console.error)
+      .catch(() => utils.errorModal('Can\'t add video at this time.'))
   }
 }
 
@@ -157,7 +167,7 @@ const onAddHero = event => {
       $('#addHeroModal').modal('hide')
       utils.removeModalBackdrop()
     })
-    .catch(console.error)
+    .catch(() => utils.errorModal('Can\'t add hero at this time.'))
 }
 
 const onDeleteVideo = event => {
@@ -169,7 +179,7 @@ const onDeleteVideo = event => {
       $('#deleteVideoPrompt').modal('hide')
       utils.removeModalBackdrop()
     })
-    .catch(console.error)
+    .catch(() => utils.errorModal('Can\'t delete video at this time.'))
 }
 
 const onDeleteHero = event => {
@@ -183,7 +193,7 @@ const onDeleteHero = event => {
     .then(() => {
       onClickProfileTab(event)
     })
-    .catch(console.error)
+    .catch(() => utils.errorModal('Can\'t delete hero at this time.'))
 }
 
 const onOpenOutsideProfile = event => {
@@ -193,7 +203,7 @@ const onOpenOutsideProfile = event => {
   } else {
     api.getOutsideUserProfile(userId)
       .then(ui.getOutsideProfileSuccess)
-      .catch(console.error)
+      .catch(() => utils.errorModal('Can\'t load at this time.'))
   }
 }
 
@@ -203,6 +213,10 @@ const onOpenModals = event => {
     $('#newDisplayName').modal('show')
     $('#display-name').on('submit', onUpdateProfile)
     $('#newDisplayName').modal('hide')
+  } else if ($target.hasClass('edit-avatar')) {
+    $('#newAvatar').modal('show')
+    $('#avatar').on('submit', onUpdateProfile)
+    $('#newAvatar').modal('hide')
   } else if ($target.hasClass('edit-summary')) {
     $('#newSummary').modal('show')
     $('#summary').on('submit', onUpdateProfile)
@@ -219,6 +233,11 @@ const onOpenModals = event => {
     $('#newSkillRating').modal('show')
     $('#skill-rating').on('submit', onUpdateProfile)
     $('#newSkillRating').modal('hide')
+  } else if ($target.hasClass('edit-mentor')) {
+    console.log('mentor clicked')
+    $('#newStatus').modal('show')
+    $('#is-mentor').on('submit', onUpdateProfile)
+    $('#newStatus').modal('hide')
   } else if ($target.hasClass('edit-video')) {
     store.videoId = $target.data('id')
     $('#videoOptions').modal('show')

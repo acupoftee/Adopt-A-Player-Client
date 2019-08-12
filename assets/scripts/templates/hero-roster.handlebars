@@ -1,17 +1,36 @@
-<div class="container">
-  {{#groupEach 5 heros}}
-    <div class="row">
-      {{#each this}}
-        <section class="hero-card" data-id="{{id}}">
-          <img class="hero-image" data-id="{{id}}" src={{grabImage id}}>
-          <h5 data-id="{{id}}">
-            {{name}}
-          </h5>
-          <p>
-            {{hero_class}}
-          </p>
-        </section>
-      {{/each}}
+<div class="hero-page container">
+  <h4>Find Players Based on Heroes!</h4>
+  <p>Each Hero fulfills their own role in Overwatch:</p>
+  <div class="hero-info">
+    <div class="explanation">
+      <h5>Tank</h5>
+      <p>Tanks specialize in protecting allies, disrupting enemies, and occupying the front line. They have high survivability and abilities that protect themselves and others with shields and crowd control.</p>
     </div>
-  {{/groupEach}}
+
+    <div class="explanation">
+      <h5>Damage</h5>
+      <p>Damage heroes are responsible for seeking out, engaging, and defeating the enemy using their varied tools, abilities and play styles.</p>
+    </div>
+
+    <div class="explanation">
+      <h5>Support</h5>
+      <p>The objective of support is to heal, buff and provide utility. Support heroes boost the overall performance of their team by increasing their survivability, speed, and damage output.</p>
+    </div>
+  </div>
+</div>
+{{#groupEach 5 heros}}
+  <div class="row">
+    {{#each this}}
+      <section class="hero-card" data-id="{{id}}">
+        <img class="hero-image" data-id="{{id}}" src={{grabImage id}}>
+        <h5 data-id="{{id}}">
+          {{name}}
+        </h5>
+        <p>
+          {{hero_class}}
+        </p>
+      </section>
+    {{/each}}
+  </div>
+{{/groupEach}}
 </div>

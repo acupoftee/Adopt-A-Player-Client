@@ -30,23 +30,6 @@ const onChangePassword = event => {
     .then(ui.changePasswordSuccessful)
     .catch(ui.changePasswordFailure)
 }
-//
-// const onSignInAfterSignUp = formData => {
-//   // const form = event.target
-//   // const formData = getFormFields(form)
-//   api.signIn(formData)
-//     .then(ui.signInSuccessful)
-//     .catch(ui.signInFailure)
-// }
-
-// const onProfileSetup = event => {
-//   event.preventDefault()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   api.buildProfile(formData)
-//     .then(console.log)
-//     .catch(console.error)
-// }
 
 const onSignOut = event => {
   event.preventDefault()

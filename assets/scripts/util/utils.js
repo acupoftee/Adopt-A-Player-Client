@@ -1,4 +1,5 @@
 'use strict'
+const showLoadError = require('../templates/error-modals/error.handlebars')
 
 const hideItems = itemName => {
   $(itemName).removeClass('active')
@@ -10,16 +11,9 @@ const showItems = itemName => {
   $(itemName).addClass('active')
 }
 
-// REFACTORED remove blank method
-// removes any empty key/value pairs from a patch request
-// that have an empty string as a value, e.g.
-// { example: { title: 'thing', text: '' } } -> { example: { title: 'thing' } }
 const removeBlanks = obj => {
-  // we don't know the name of the object in `req`, so we'll apply this to
-  // ALL objects in `req`
   for (const key in obj) {
     if (obj[key] === '') {
-      // removes both the key and the value, preventing it from being updated
       delete obj[key]
     }
   }
@@ -37,11 +31,21 @@ const validateUrl = url => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/
     const match = url.match(regExp)
     if (match && match[2].length === 11) {
-      // return 'https://www.youtube.com/embed/' + match[2] + '?autoplay=1&enablejsapi=1'
       return true
     }
   }
   return false
+}
+
+const validateImageUrl = url => {
+  return (url.match(/\.(jpeg|jpg|png)$/) !== null)
+}
+
+const errorModal = text => {
+  const failureModalHtml = showLoadError()
+  $('.errors').html(failureModalHtml)
+  $('.modal-error-message').html(text)
+  $('#loadError').modal('show')
 }
 
 module.exports = {
@@ -49,5 +53,7 @@ module.exports = {
   showItems,
   removeBlanks,
   removeModalBackdrop,
-  validateUrl
+  validateUrl,
+  validateImageUrl,
+  errorModal
 }

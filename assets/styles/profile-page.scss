@@ -37,8 +37,7 @@ iframe {
   }
 }
 
-.editable,
-.in-profile-edit {
+.editable {
   &:hover {
     color: #f5b903;
     cursor: pointer;
@@ -154,6 +153,11 @@ iframe {
   margin-bottom: 1%;
   height: 20vw;
   width: 20vw;
+
+  &:hover {
+    cursor: pointer;
+    border: 4px solid #f5b903;
+  }
 }
 
 .video-wrapper {

@@ -4,7 +4,7 @@ module.exports = {
   3: 'Baptiste',
   4: 'Bastion',
   5: 'Brigitte',
-  6: 'D.va',
+  6: 'D.Va',
   7: 'Doomfist',
   8: 'Genji',
   9: 'Hanzo',

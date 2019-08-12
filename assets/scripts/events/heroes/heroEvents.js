@@ -7,7 +7,7 @@ const onGetHeroRoster = event => {
   api.getHeroes()
     .then(ui.getHeroRosterSuccess)
     .then(() => utils.hideItems('.homepage'))
-    .catch(console.error)
+    .catch(ui.getHeroRosterFailure)
 }
 
 const onGetUsersByHero = event => {
@@ -15,7 +15,7 @@ const onGetUsersByHero = event => {
   const heroId = $(event.target).data()
   api.getUsersByHero(heroId.id)
     .then(ui.getUsersByHeroSuccess)
-    .catch(console.error)
+    .catch(() => utils.errorModal('Can\'t get players at this time.'))
 }
 const addHandlers = () => {
   $('#getHeroRoster').on('click', onGetHeroRoster)

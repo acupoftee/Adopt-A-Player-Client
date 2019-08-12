@@ -1,0 +1,29 @@
+.hero-page {
+  color: white;
+  text-align: center;
+}
+
+.hero-info {
+  display: flex;
+  justify-content: space-between;
+
+
+  .explanation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 2%;
+
+    h5 {
+      text-transform: uppercase;
+      font-size: 1em;
+      font-weight: bold;
+      color: $button;
+    }
+
+    p {
+      font-size: .9em;
+      color: lighten(#2d3547, 20%);
+    }
+  }
+}
