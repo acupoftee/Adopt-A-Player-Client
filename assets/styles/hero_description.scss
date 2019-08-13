@@ -1,0 +1,31 @@
+.hero-spotlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 45vw;
+}
+
+.hero-spotlight-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .hero-spotlight-image {
+        text-align: right;
+    }
+    
+    .textbox {
+        border-left: 5px solid $button;
+        p {
+            font-size: .9em;
+            margin-left: 10px;
+            color: lighten(#2d3547, 30%);
+        }
+    }
+}
+
+.spotlight-container {
+    display: flex;
+    justify-content: center;
+}
