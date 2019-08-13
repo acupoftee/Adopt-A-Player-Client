@@ -16,7 +16,7 @@ const getHeroRosterFailure = () => {
 
 const getUsersByHeroSuccess = data => {
   if (data.hero.users.length === 0) {
-    $('.hero-list').html('No one has played this hero yet!').css('color', 'white')
+    $('.hero-list').html('<p class="no-one">No one has played this hero yet!</p>').css('color', 'white')
   } else {
     const showUsersByHeroHtml = showHeroUserTemplate({users: data.hero.users})
     const heroHeading = `<h4 class="hero-heading">Showing Results for <span>${data.hero.name}</span></h4>`
