@@ -133,9 +133,9 @@ const images = {
   }
 }
 
-const grabImage = (id, full = false) => {
+const grabImage = (id, full=false) => {
   const image = images[id]
-  return full ? image.full : image.icon
+  return full ? image.icon : image.full
 }
 
 module.exports = grabImage
