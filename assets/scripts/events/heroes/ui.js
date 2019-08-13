@@ -23,7 +23,7 @@ const getUsersByHeroSuccess = data => {
   } else {
     const showUsersByHeroHtml = showHeroUserTemplate({users: data.hero.users})
     const heroHeading = `<h4 class="hero-heading">Showing Results for <span>${data.hero.name}</span></h4>`
-    $('.hero-list').html(heroHeading + showHeroDescriptionHtml + showUsersByHeroHtml)
+    $('.hero-list').html(showHeroDescriptionHtml + heroHeading + showUsersByHeroHtml)
   }
 }
 module.exports = {
