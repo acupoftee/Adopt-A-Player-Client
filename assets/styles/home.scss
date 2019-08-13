@@ -9,10 +9,63 @@ body {
   overflow-y: scroll;
 }
 
+h4 {
+  color: lighten(#f5b903, 5%);
+  font-size: 1vw;
+  font-weight: bold;
+  margin-bottom: 0%;
+  text-transform: uppercase;
+}
+
+p {
+  color: darken(#c3c8cf, 5%);
+}
+
 .homepage {
   color: $paragraph-color;
 }
 
+.section {
+  margin: auto 5%;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+
+  .text {
+    // margin-top: 15%;
+    width: 50vw;
+  }
+
+  .intro-image {
+    img {
+      width: 50vw;
+    }
+  }
+}
+
+.feature-list {
+  width: 100%;
+  height: 50vh;
+  margin: 0;
+  padding-top: 5%;
+  background: black;
+  display: flex;
+
+  .text {
+    margin: 5%;
+  }
+}
+
+.hero-heading {
+  margin-bottom: 5%;
+}
+
+.no-one {
+  text-align: center;
+}
 // .intro {
 //   position: relative;
 //   top: 80px;
