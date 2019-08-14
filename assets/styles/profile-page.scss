@@ -153,8 +153,10 @@ iframe {
   margin-bottom: 1%;
   height: 20vw;
   width: 20vw;
+}
 
-  &:hover {
+.pic-edit {
+    &:hover {
     cursor: pointer;
     border: 4px solid #f5b903;
   }
