@@ -18,10 +18,10 @@ const onClickLogo = event => {
   utils.showItems('.homepage')
 }
 
-const openVideoDeleteOptions = event => {
+const openVideoDeleteOptions = () => {
   $('#deleteVideoPrompt').modal('show')
   $('#videoOptions').modal('hide')
-  $('#delete-video').on('click', onDeleteVideo)
+  $('#delete-video-yes').on('click', onDeleteVideo)
 }
 
 const onOpenRemoveHeroPrompt = event => {
