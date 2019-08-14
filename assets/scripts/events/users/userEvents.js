@@ -27,7 +27,7 @@ const openVideoDeleteOptions = () => {
 const onOpenRemoveHeroPrompt = event => {
   store.heroId = $(event.target).data('id')
   $('#deleteHeroPrompt').modal('show')
-  $('#delete-hero').on('click', onDeleteHero)
+  $('#delete-hero-yes').on('click', onDeleteHero)
 }
 
 const onGetUsers = event => {
