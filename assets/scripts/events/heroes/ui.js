@@ -22,7 +22,7 @@ const getUsersByHeroSuccess = data => {
     $('.hero-list').html(showHeroDescriptionHtml + '<p class="no-one">No one has played this hero yet!</p>').css('color', 'white')
   } else {
     const showUsersByHeroHtml = showHeroUserTemplate({users: data.hero.users})
-    const heroHeading = `<h4 class="hero-heading">Showing Players who play the hero <span>${data.hero.name}</span></h4>`
+    const heroHeading = `<h4 class="hero-heading">Showing Players who've played the hero <span>${data.hero.name}</span></h4>`
     $('.hero-list').html(showHeroDescriptionHtml + heroHeading + showUsersByHeroHtml)
   }
 }
