@@ -10,17 +10,32 @@ Check out the repo for Overwatcher's [Ruby on Rails API](https://github.com/acup
 You can view the deployed backend on [Heroku](https://adopt-a-player.herokuapp.com)
 
 <p align="center">
-<img src="readme_assets/hero-view.png" height="306">
+<img src="readme_assets/homepaeg.png">
 </p>
 
-<p align="center">
-<img src="https://thumbs.gfycat.com/ThisNeglectedGull-small.gif">
-</p>
+
 
 ## ✨ Features
-* View available mentors and mentees
-* Search for players based on heroes played
-* Customize profile and VOD showcase as a signed in user
+#### Create an account, or sign into an existing one
+<img src="https://thumbs.gfycat.com/FalseGoodAmurstarfish-small.gif">
+
+#### View player profiles
+<img src="https://thumbs.gfycat.com/QuaintValuableHuman-small.gif">
+
+#### Find players based on played Heroes 
+<img src="https://thumbs.gfycat.com/PersonalHeavenlyDuck-small.gif">
+<img src="https://thumbs.gfycat.com/ImpureCautiousCranefly-small.gif">
+
+
+#### Make edits to your existing profile
+<img src="https://thumbs.gfycat.com/LateSlimHorse-small.gif">
+
+## 🔮Features in the works
+* Mentor and mentee pairing
+* Messaging
+* Sign in with Blizzard
+* Email verification
+
 
 ## ✍️ Planning
 The design was inspired by [Discord's](https://discord.gg) color scheme as it's the main hub for gamers and nerds alike! This type of design isn't ubiquitous yet, so it was important to still remain inclusive whien designing this. Mobile first design principles were applied first and foremost, and future iterations will continue to prioritize it.
