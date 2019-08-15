@@ -18,7 +18,7 @@ const getHeroRosterFailure = () => {
 
 const getUsersByHeroSuccess = data => {
   const showHeroDescriptionHtml = showHeroDescription({hero: data.hero})
-  const backButton = '</br><a class="back-hero-listings" href="#">Back to Hero Search</a>'
+  const backButton = '<a class="back-hero-listings" href="#">Back to Hero Search</a>'
   if (data.hero.users.length === 0) {
     $('.hero-list').html(showHeroDescriptionHtml + '<p class="no-one">No one has played this hero yet!</p>' + backButton)
     $('.no-one').css('color', 'white')
