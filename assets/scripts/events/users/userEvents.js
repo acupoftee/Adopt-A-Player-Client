@@ -8,6 +8,8 @@ const utils = require('../../util/utils')
 const avatars = require('./randomAvatar')
 const mentorStatus = require('./getStatus')
 
+store.profileData = {}
+
 const openVideoOptions = event => {
   $('#editVideoModal').modal('show')
   $('#videoOptions').modal('hide')
@@ -34,6 +36,20 @@ const onGetUsers = event => {
   event.preventDefault()
   api.getUsers()
     .then(ui.getProfilesSuccess)
+    // .then(() => {
+    //   if (store.user.token && !store.profileData.user.user.avatar_url) {
+    //     const avatar = avatars.getAvatar()
+    //     const data = {
+    //       user: {
+    //         avatar_url: avatar
+    //       }
+    //     }
+    //     store.profileData.user.user.avatar_url = avatar
+    //     onUpdateAvatar(data)
+    //     return true
+    //   }
+    //   return false
+    // })
     .then(() => utils.hideItems('.homepage'))
     .catch(ui.getProfilesFailure)
 }
@@ -209,7 +225,7 @@ const onOpenOutsideProfile = event => {
 
 const onOpenModals = event => {
   const $target = $(event.target)
-  if ($target.hasClass('edit-display-name')) {
+  if ($target.hasClass('edit-display-name') || $target.hasClass('add-display-name')) {
     $('#newDisplayName').modal('show')
     $('#display-name').on('submit', onUpdateProfile)
     $('#newDisplayName').modal('hide')
