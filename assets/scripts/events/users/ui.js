@@ -50,6 +50,8 @@ const updateProfileView = formData => {
       break
     case 'display_name':
       $('.edit-display-name').html(updatedForm[key])
+      $('.add-display-name').remove()
+      $('.new-display-name').html(updatedForm[key])
       break
     case 'summary':
       $('.edit-summary').html(updatedForm[key])
