@@ -19,7 +19,7 @@ const onGetUsersByHero = event => {
 }
 const addHandlers = () => {
   $('#getHeroRoster').on('click', onGetHeroRoster)
-
+  $('body').on('click', '.back-hero-listings', onGetHeroRoster)
   $('body').on('click', '.hero-card', onGetUsersByHero)
 }
 
