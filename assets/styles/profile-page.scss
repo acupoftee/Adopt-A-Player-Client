@@ -95,6 +95,12 @@ iframe {
   margin: auto 1%;
 }
 
+.another-hero {
+  &:hover {
+    cursor: pointer;
+    border: $button 4px solid;
+  }
+}
 .hero-profile-icon-close {
   cursor: default;
   color: #f5b903;
