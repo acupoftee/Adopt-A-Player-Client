@@ -21,6 +21,7 @@ const addHandlers = () => {
   $('#getHeroRoster').on('click', onGetHeroRoster)
   $('body').on('click', '.back-hero-listings', onGetHeroRoster)
   $('body').on('click', '.hero-card', onGetUsersByHero)
+  $('body').on('click', '.another-hero',onGetUsersByHero)
 }
 
 module.exports = {
