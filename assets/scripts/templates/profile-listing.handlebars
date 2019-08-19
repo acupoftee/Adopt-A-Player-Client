@@ -9,9 +9,9 @@
                 <img class="profile-pic" data-id="{{id}}" src="https://pbs.twimg.com/media/DEYvBMSVYAAiTnF.png">
             {{/if}}
               {{#if display_name}}
-                <h3 data-id="{{id}}">{{display_name}}</h3>
+                <h3 data-id="{{id}}">{{limit display_name 20}}</h3>
               {{else}}
-                <h3 data-id="{{id}}">{{email}}</h3>
+                <h3 data-id="{{id}}">{{limit email 20}}</h3>
               {{/if}}
               {{#if is_mentor}}
                 <p class="status" data-id="{{id}}">Mentor</p>
