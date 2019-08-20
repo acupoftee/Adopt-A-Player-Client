@@ -10,18 +10,18 @@
     {{#if user.display_name}}
       <div class="edit-container">
         <h1 class="editable edit-display-name">
-          {{user.display_name}}</h1>
+          {{limit user.display_name 20}}</h1>
         <p class="editable edit-display-name pencil">✎</p>
       </div>
       <!-- <p class="editable">Edit</p> -->
     {{else}}
-      <h1 class="new-display-name">{{user.email}}</h1>
+      <h1 class="new-display-name">{{limit user.email 20}}</h1>
       <p class="editable add-display-name">Add Display Name</p>
     {{/if}}
 
     {{#if user.summary}}
       <div class="summary-box">
-        <p class="editable edit-summary summary">{{user.summary}} <small class="editable edit-summary">✎</small></p>
+        <p class="editable edit-summary summary">{{limit user.summary 150}} <small class="editable edit-summary">✎</small></p>
       </div>
       <!-- <p class="editable">Edit</p> -->
     {{else}}
@@ -45,7 +45,7 @@
       {{#each user.videos as |video|}}
         </br>
         <div class="edit-container">
-        <h5 class="editable edit-video" data-id="{{video.id}}">{{video.title}}</h5>
+        <h5 class="editable edit-video" data-id="{{video.id}}">{{limit video.title 30}}</h5>
         <p class="editable edit-video pencil" data-id="{{video.id}}">&thinsp;✎</p>
       </div>
         <div class="video-wrapper">

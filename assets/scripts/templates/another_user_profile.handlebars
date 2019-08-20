@@ -2,14 +2,14 @@
   <div class="profile-header">
     <img class="profile-pic-main" src="{{user.avatar_url}}"/>
     {{#if user.display_name}}
-      <h1>{{user.display_name}}</h1>
+      <h1>{{limit user.display_name 20}}</h1>
       <!-- <p class="editable">Edit</p> -->
     {{else}}
-      <h1>{{user.email}}</h1>
+      <h1>{{limit user.email 20}}</h1>
     {{/if}}
 
     {{#if user.summary}}
-      <p class="summary">{{user.summary}}</p>
+      <p class="summary">{{limit user.summary 150}}</p>
     {{/if}}
 
   </div>
@@ -26,7 +26,7 @@
       <div class="video-view">
     {{#each user.videos as |video|}}
     <div class="video-container">
-    <h5 data-id="{{video.id}}">{{video.title}}</h5>
+    <h5 data-id="{{video.id}}">{{limit video.title 30}}</h5>
     <div class="video-wrapper">
     <iframe width="560" height="340" data-id="{{video.id}}" src="{{grabVideoUrl video.url}}"></iframe>
   </div>
