@@ -8,6 +8,9 @@ const signUpSuccessful = () => {
   // close sign up modal
   $('#signUpModal').modal('hide')
 
+  // open success modal
+  $('.signUpSuccess').modal('show')
+
   // clear form
   $('form').trigger('reset')
 }
