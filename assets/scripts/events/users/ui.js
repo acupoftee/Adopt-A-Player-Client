@@ -49,6 +49,7 @@ const updateHeroListings = data => {
 
 const updateProfileView = formData => {
   const key = Object.keys(formData.user)[0]
+  console.log('Form key', key)
   const updatedForm = formData.user
   switch (key) {
     case 'avatar_url':
