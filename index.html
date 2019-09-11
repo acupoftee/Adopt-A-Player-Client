@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Overwatcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="https://i.imgur.com/wabCQQp.png">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div class="navbar-header">
+    <nav>
+      <div class="nav-wrapper">
+        <div class="auth-options">
+          <a href="#" class="nav-item nav-logo">Overwatcher</a>
+          <a href="#" class="nav-item player-search" id="getPlayers">Find Players</a>
+          <a href="#" class="nav-item hero-search" id="getHeroRoster">Find By Hero</a>
+          <a href="#" class="nav-item logIn active" id="login-tab">Sign In</a>
+          <a href="#" class="nav-item signUp active" id="sign-up-tab">Sign Up</a>
+          <!-- <a href="#" class="editProfile hidden" id="updateProfile">Profile</a> -->
+          <a href="#" class="nav-item goToProfile hidden" id="profile">Profile</a>
+          <a href="#" class="nav-item changePassword hidden" id="settings">Change Password</a>
+          <a href="#" class="nav-item logOut hidden" id="logout-tab">Sign Out</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <div class="view homepage active">
+      <div class="section intro">
+        <div class="text">
+        <h4>You're in good hands</h4>
+        <h1>Welcome to Overwatcher</h1>
+        <p>The purpose of this community is to serve as an Overwatch mentoring program for players who wish to improve their gameplay. Whether you’re improving for fun or you aspire to one day reach Grandmaster, Open Division and beyond, this service
+          is for you, gg.</p>
+        <button class="btn btn-primary homePageSignUp active">Sign Up</button>
+        <!-- <button class="btn btn-primary enterMentorSearch hidden">Get Adopted!</button> -->
+        <small class="intro-footer">Already a user? <a href="#" class="logIn">Sign in</a>!</small>
+        <p class="login-message"></p>
+      </div>
+      <div class="intro-image">
+        <img src="https://acupoftee.github.io/images/intro-photo2.png">
+      </div>
+    </div>
+
+      <!-- <div class="section feature-list">
+        <div class="text">
+        <h4>The world needs more strong players</h4>
+        <h1>Here to help you be the very best</h1>
+        <p>We've got everything you need to be the best that you can be in Overwatch. Whether you're looking to learn something new from a mentor, or share your knowledge, we've got you covered.</p>
+        </div>
+        <div class="profile-samples">
+
+        </div>
+      </div> -->
+    </div>
+
+    <!-- SIGN IN MODAL -->
+    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Login</h5> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-greeting">
+              <h5>Welcome Back</h5>
+              <p>We've missed you!</p>
+              <p class="sign-in-error"></p>
+            </div>
+            <form id="sign-in">
+              <div class="form-group">
+                <div class="input-group addon">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                  <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group addon">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-key"></i>
+                  </span>
+                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
+                </div>
+              </div>
+              <button class="btn btn-success btn-block form-action">Sign In</button>
+            </form>
+            <div class="or-option">
+              <div class="line"></div>
+            </div>
+            <div class="redirect-container">
+              <p class="modal-redirect">No account yet? <a href="#" class="signUp">Sign up</a>!</p>
+            </div>
+          </div>
+          <!-- <div class="modal-footer">
+            <div class="WordDividerLine-container"></div>
+            <small class="modal-redirect">No account yet? <a href="#" class="signUp">Sign up</a>!</small>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGN UP MODAL -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-greeting">
+              <h5>Welcome Noob</h5>
+              <p>We promise you'll love it.</p>
+              <p class="sign-up-error"></p>
+            </div>
+            <form id="sign-up">
+              <div class="form-group">
+                <div class="input-group addon">
+                  <span class="input-group-addon">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                  <input name="credentials[email]" type="email" placeholder="Email" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group addon">
+                  <span class="input-group-addon">
+                    <i class="fa fa-key"></i>
+                  </span>
+                  <input name="credentials[password]" type="password" placeholder="Password" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group addon">
+                  <span class="input-group-addon">
+                    <i class="fa fa-check"></i>
+                  </span>
+                  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" class="form-control" required>
+                </div>
+              </div>
+              <button class="btn btn-success btn-block sign-in-after-sign-up form-action">Sign Up</button>
+            </form>
+            <div class="or-option">
+              <div class="line"></div>
+            </div>
+            <div class="redirect-container">
+              <p class="modal-redirect">Already a user? <a href="#" class="logIn">Sign in</a>!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal signUpSuccess fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            You've successfully signed up 🎉 Have fun!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success logIn" data-dismiss="modal">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW PROFILE MODAL -->
+    <!-- https://stackoverflow.com/questions/22207377/disable-click-outside-of-bootstrap-modal-area-to-close-modal -->
+    <!-- <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Profile Setup</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="setup-greeting">
+              <p>You've come to the right place. Let's get you started by</br> adding your information.</p>
+              <<p class="sign-up-error hidden">Can't sign you up. 😞</p>
+            </div>
+            <form id="new-profile">
+              <div class="form-group">
+                <input name="user[display_name]" type="text" placeholder="Display Name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="user[summary]" type="text" placeholder="Tell us about yourself." class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="user[avatar_url]" type="text" placeholder="Avatar URL" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="regionSelectForm">Select Region</label>
+                <select name="user[region]" class="form-control" id="regionSelectForm" required>
+                  <option>Americas</option>
+                  <option>Europe</option>
+                  <option>Asia</option>
+                  <option>OCE</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="platformSelectForm">Select Platform</label>
+                <select name="user[platform]" class="form-control" id="platformSelectForm" required>
+                  <option>PC</option>
+                  <option>Xbox One</option>
+                  <option>Playstation 4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="skillRatingForm">Select Platform</label>
+                <small>This is your rating earned from your curret or most recent competitive season of Overwatch.</small>
+                <input name="user[skill_rating]" id="skillRatingForm" type="number" placeholder="Skill Rating" min="1" max="5000" class="form-control" required>
+              </div>
+              <button class="btn btn-success btn-block sign-in-after-sign-up">Create Profile</button>
+            </form>
+            <div class="or-option">
+              <div class="line"></div>
+              <div class="or-text"></div>
+              <div class="line"></div>
+            </div>
+            <button class="btn btn-primary btn-block" data-dismiss="modal">Setup Later</button>
+          </div>
+        </div>
+      </div>
+    </div>  -->
+
+
+    <!-- CHANGE PASSWORD MODAL -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Change Password</h5> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-greeting">
+              <h5>Change Password</h5>
+              <p class="change-password-error"></p>
+            </div>
+            <form id="change-password">
+              <div class="form-group">
+                <input name="passwords[old]" type="password" placeholder="Old Password" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <input name="passwords[new]" type="password" placeholder="New Password" class="form-control" required>
+              </div>
+              <button class="btn btn-success">Change Password</button>
+              <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHANGE PASSWORD SUCCESSFUL -->
+    <div class="modal newpassword fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Password Change Successful!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            You've successfully changed your password! 🎉
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHANGE PASSWORD FAILURE -->
+    <div class="modal nopassword fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Password Change Failure</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            You shall not have a new password 🧙‍
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- END INTRO -->
+
+    <!-- LISTINGS -->
+    <div class="view hero-listings">
+      <div class="hero-list" id="content"></div>
+      <div class="errors"></div>
+    </div>
+
+    <!-- <div class="view user-profile">
+      <div class="user-profile-content"></div>
+    </div> -->
+  </main>
+</body>
+
+</html>
