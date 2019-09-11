@@ -96,7 +96,8 @@ const onUpdateProfile = event => {
   if (formData.user.is_mentor) {
     const key = formData.user.is_mentor
     formData.user.is_mentor = mentorStatus[key]
-  } else if (formData.user.avatar_url && !utils.validateImageUrl(formData.user.avatar_url)) {
+  }
+  if (formData.user.avatar_url && !utils.validateImageUrl(formData.user.avatar_url)) {
     $('.avatar-error').html('Avatar URL Invalid. Please use a .jpeg, .jpg, or .png file!')
     setTimeout(() => {
       $('.avatar-error').empty()
@@ -250,7 +251,6 @@ const onOpenModals = event => {
     $('#skill-rating').on('submit', onUpdateProfile)
     $('#newSkillRating').modal('hide')
   } else if ($target.hasClass('edit-mentor')) {
-    console.log('mentor clicked')
     $('#newStatus').modal('show')
     $('#is-mentor').on('submit', onUpdateProfile)
     $('#newStatus').modal('hide')
