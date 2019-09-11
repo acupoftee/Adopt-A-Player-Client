@@ -10,7 +10,13 @@ const showOutsideProfileTemplate = require('../../templates/another_user_profile
 // const showHeroRefresh = require('../../templates/hero/hero_view.handlebars')
 
 const getProfilesSuccess = data => {
-  const showProfilesHtml = showProfilesTemplate({users: data.users})
+  const showProfilesHtml = showProfilesTemplate({
+    users: data.users.sort((a, b) => {
+      const aSummaryLength = a.summary ? a.summary.length : 0
+      const bSummaryLength = b.summary ? b.summary.length : 0
+      return bSummaryLength - aSummaryLength
+    })
+  })
 
   $('.hero-list').html(showProfilesHtml)
 }
@@ -20,7 +26,7 @@ const getProfilesFailure = () => {
 }
 
 const getProfileSuccess = data => {
-  const showProfileHtml = showProfileTemplate({user: data.user.user, thing: data.joins.user_heros})
+  const showProfileHtml = showProfileTemplate({ user: data.user.user, thing: data.joins.user_heros })
 
   $('.hero-list').html(showProfileHtml)
 }
