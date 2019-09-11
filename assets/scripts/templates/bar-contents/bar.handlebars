@@ -2,16 +2,16 @@
   <div class="detail">
     <h5>Status</h5>
     {{#if user.is_mentor}}
-      <p class="editable"><span class="edit-mentor">Mentor</span><small>✎</small></p>
+      <p class="editable"><span class="edit-mentor">Mentor</span> <small class="edit-mentor pencil">✎</small></p>
     {{else}}
-      <p class="editable"><span class="edit-mentor">Mentee</span><small>✎</small></p>
+      <p class="editable"><span class="edit-mentor">Mentee</span> <small class="edit-mentor pencil">✎</small></p>
     {{/if}}
   </div>
   <!-- <p class="editable">Edit</p> -->
   <div class="detail">
     <h5>Platform</h5>
     {{#if user.platform}}
-      <p class="editable"><span class="edit-platform">{{user.platform}} <small>✎</small></span></p>
+      <p class="editable"><span class="edit-platform">{{user.platform}}</span> <small class="edit-platform pencil">✎</small></p>
       <!-- <p class="editable">Edit</p> -->
     {{else}}
       <p class="editable edit-platform">Add Platform</p>
@@ -22,7 +22,7 @@
   <div class="detail">
     <h5>Region</h5>
      {{#if user.region}}
-      <p class="editable"><span class="edit-region">{{user.region}} <small>✎</small></span></p>
+      <p class="editable"><span class="edit-region">{{user.region}}</span> <small class="edit-region pencil">✎</small></p>
       <!-- <p class="editable">Edit</p> -->
     {{else}}
       <p class="editable edit-region">Add Region</p>
@@ -34,7 +34,7 @@
   <div class="detail">
     <h5>Skill Rating</h5>
     {{#if user.skill_rating}}
-      <p class="editable"><span class="edit-skill-rating">{{user.skill_rating}} <small>✎</small></span></p>
+      <p class="editable"><span class="edit-skill-rating">{{user.skill_rating}}</span> <small class="edit-skill-rating pencil">✎</small></p>
       <!-- <p class="editable">Edit</p> -->
     {{else}}
       <p class="editable edit-skill-rating">Add Skill Rating</p>
